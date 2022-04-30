@@ -1,18 +1,35 @@
+<%@include file="header.jsp"%>
 <!DOCTYPE html>
 <html>
-	<head>
-		<!-- Bootstrap core CSS -->
-	    <link href="css/bootstrap.min.css" rel="stylesheet" >
-	    <!-- Bootstrap theme -->
-	    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
-	</head>
+
+	
 	<body>
-		<div class = "container">
-			<h1>Bienvenidos a Taller Web 1</h1>
-		</div>
-		<!-- Placed at the end of the document so the pages load faster -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" ></script>
-		<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-		<script src="js/bootstrap.min.js" type="text/javascript"></script>
+			
+			
+			
+			<div class="container">
+			
+			
+			<form class="box">
+       		 <div class="mb-3">
+			    <label class="form-label" for="searchBig"> <h1>Busca algo que leer...</h1> </label>
+			    <input type="search" id="searchBig" class="form-control" aria-describedby="Busca algo" />  
+			</div>	
+			  <button type="submit" class="btn btn-primary" href="historias">Buscar</button>
+			</form>
+			</div>
+			
+		
+			
+			<a href="historias"><h2>a</h2></a>
+			
+			
+			
+
+		 
+		
 	</body>
+	
+	
+	
 </html>
