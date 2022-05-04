@@ -1,18 +1,60 @@
+<%@include file="header.jsp"%>
 <!DOCTYPE html>
 <html>
-	<head>
-		<!-- Bootstrap core CSS -->
-	    <link href="css/bootstrap.min.css" rel="stylesheet" >
-	    <!-- Bootstrap theme -->
-	    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
-	</head>
-	<body>
-		<div class = "container">
-			<h1>Bienvenidos a Taller Web 1</h1>
+
+
+	<body class="main-bg">
+			
+				<figure class=" pt-3 text-center">
+					<blockquote class="blockquote">
+						<h1 class="display-1"> Bookstore </h1>
+					</blockquote>
+					<figcaption class="blockquote-footer">
+					  <p class="display-6">La Libreria de Todos</p>
+					</figcaption>
+				  </figure>
+
+		<div class="container">
+			
+		 <form>
+			
+       	<div class="mb-3 pt-3 row">
+
+			<div class="col-1"></div>
+
+			<div class="col-7 pt-lg-5">
+
+			    <label class="form-label" for="searchBig"> <h2 class="unde display-3">Busca algo que </h2> </label>
+				<h2 class="display-3">leer...</h2> 
+			    <input type="search" id="searchBig" class="form-control" aria-describedby="Busca algo" />  
+
+				<div class="wrapper-button pt-1 d-grid gap-2">
+					<button type="submit" class="button-main btn btn-primary" href="historias"><span>Buscar</span></button>
+				</div>
+
+			</div>
+			
+			<div class="col">
+				<img src="images/homeimg.jpg" class="img-home rounded img-thumbnail img-fluid" alt="...">
+			</div>
+
 		</div>
-		<!-- Placed at the end of the document so the pages load faster -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" ></script>
-		<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-		<script src="js/bootstrap.min.js" type="text/javascript"></script>
+
+			  
+		 </form>
+
+		</div>
+
+			
+			
+		
+			
+			
+
+		 
+		
 	</body>
+	
+	
+	
 </html>
