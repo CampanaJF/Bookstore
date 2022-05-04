@@ -7,6 +7,7 @@
         <meta charset="ISO-8859-1">
 	    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
 	     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">  
+       <link href="css/estilos.css" rel="stylesheet">
 	     <!-- <link href="css/bootstrap.min.css" rel="stylesheet" -->    
 	</head>
 	
@@ -23,25 +24,25 @@
       <div class="collapse navbar-collapse" id="navbarsExample04">
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
           <li class="nav-item">
-            <a class="nav-link" href="#">Mi Perfil</a>
+            <a class="nav-text nav-link" href="#">Mi Perfil</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Nuevo Libro</a>
+            <a class="nav-text nav-link" href="#">Nuevo Libro</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Mis Libros</a>
+            <a class="nav-text nav-link" href="#">Mi Biblioteca</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Biblioteca</a>
+            <a class="nav-text nav-link" href="libreria">Explorar</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Login</a>
+            <a class="nav-text nav-link" href="#">Login</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Registrarse</a>
+            <a class="nav-text nav-link" href="#">Registrarse</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Logout</a>
+            <a class="nav-text nav-link" href="#">Logout</a>
           </li>
         </ul>
         <form>

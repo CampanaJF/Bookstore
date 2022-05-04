@@ -10,9 +10,9 @@ import org.springframework.web.servlet.ModelAndView;
 public class ControladorHome {
 	
 	
-		@RequestMapping(path = "/historias", method = RequestMethod.GET)
-		public ModelAndView goHistorias() {
-			return new ModelAndView("historias");
+		@RequestMapping(path = "/libreria", method = RequestMethod.GET)
+		public ModelAndView goLibreria() {
+			return new ModelAndView("libreria");
 		}
 	
 		
