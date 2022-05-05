@@ -37,6 +37,10 @@
 			<div class="col">
 				<img src="images/homeimg.jpg" class="img-home rounded img-thumbnail img-fluid" alt="...">
 			</div>
+			
+			<div class="col">
+				<img src="img/homeimg.jpg" class="img-home rounded img-thumbnail img-fluid" alt="...">
+			</div>
 
 		</div>
 
