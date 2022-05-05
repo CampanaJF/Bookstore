@@ -20,8 +20,8 @@ public class ServicioLoginImpl implements ServicioLogin {
 	private RepositorioUsuario servicioLoginDao;
 
 	@Autowired
-	public ServicioLoginImpl(RepositorioUsuario servicioLoginDao){
-		this.servicioLoginDao = servicioLoginDao;
+	public ServicioLoginImpl(RepositorioUsuario repositorioLoginDao){
+		this.servicioLoginDao = repositorioLoginDao;
 	}
 
 	@Override

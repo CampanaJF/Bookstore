@@ -1,5 +1,7 @@
 package ar.edu.unlam.tallerweb1.modelo;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,7 +21,9 @@ public class Libro {
 	private String titulo;
 	
 	private String serie;
+	private String lenguaje;
 	private String referencia;
+	private Date publicado;
 	
 	@ManyToOne
 	private Autor autor;
@@ -54,6 +58,18 @@ public class Libro {
 	}
 	public void setId(Long id) {
 		this.id = id;
+	}
+	public Date getPublicado() {
+		return publicado;
+	}
+	public void setPublicado(Date publicado) {
+		this.publicado = publicado;
+	}
+	public String getLenguaje() {
+		return lenguaje;
+	}
+	public void setLenguaje(String lenguaje) {
+		this.lenguaje = lenguaje;
 	}
 	
 	

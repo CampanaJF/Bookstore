@@ -14,7 +14,22 @@ public class ControladorHome {
 		public ModelAndView goLibreria() {
 			return new ModelAndView("libreria");
 		}
-	
+		
+		@RequestMapping(path = "/biblioteca", method = RequestMethod.GET)
+		public ModelAndView verMiBiblioteca() {
+			return new ModelAndView("biblioteca");
+		}
+		
+		@RequestMapping(path = "/libro", method = RequestMethod.GET)
+		public ModelAndView verLibro() {
+			return new ModelAndView("libro");
+		}
+		
+		
+		@RequestMapping(path = "/perfil", method = RequestMethod.GET)
+		public ModelAndView verPerfil() {
+			return new ModelAndView("perfil");
+		}
 		
 		@RequestMapping(path = "/home", method = RequestMethod.GET)
 		public ModelAndView goHome() {
