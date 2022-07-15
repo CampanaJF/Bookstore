@@ -1,0 +1,59 @@
+@charset "UTF-8";
+
+html{
+    width: 100%;
+    height: 100%;
+}
+
+body{
+    min-height: 100%;
+    height: auto;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+ /* label color */
+ .input-field label {
+  color: #ef6c00;
+}
+/* label focus color */
+.input-field input[type=text]:focus + label {
+  color: #ef6c00;
+}
+/* label underline focus color */
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid #ef6c00 !important;
+  box-shadow: 0 1px 0 0 #ef6c00 !important;
+}
+/* valid color */
+.input-field input[type=text].valid {
+  border-bottom: 1px solid #ef6c00;
+  box-shadow: 0 1px 0 0 #ef6c00;
+}
+/* invalid color */
+.input-field input[type=text].invalid {
+  border-bottom: 1px solid #ef6c00;
+  box-shadow: 0 1px 0 0 #ef6c00;
+}
+/* icon prefix focus color */
+.input-field .prefix.active {
+  color:  #ef6c00 ;
+}
+     
+.ps{
+  padding-left: 0.5em;
+}
+
+nav ul a:hover {
+  background-color: rgba(255, 224, 178, 0.7);
+}
+
+.notificationicon{
+  color: #e65100;
+}

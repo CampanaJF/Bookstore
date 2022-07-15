@@ -33,7 +33,7 @@ public class ControladorHome {
 		
 		@RequestMapping(path = "/home", method = RequestMethod.GET)
 		public ModelAndView goHome() {
-			return new ModelAndView("home");
+			return new ModelAndView("index");
 		}
 
 		
