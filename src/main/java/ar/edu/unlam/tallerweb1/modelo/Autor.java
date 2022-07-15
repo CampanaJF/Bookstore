@@ -17,7 +17,6 @@ public class Autor {
 		
 		private String nombre;
 		private String apellido;
-		private Boolean activo = false;
 		
 		@OneToOne
 		private Usuario usuario;
@@ -40,15 +39,6 @@ public class Autor {
 		public void setApellido(String apellido) {
 			this.apellido = apellido;
 		}
-		public Boolean getActivo() {
-			return activo;
-		}
-		public void setActivo(Boolean activo) {
-			this.activo = activo;
-		}
-		public void activarAutor() {
-			activo = true;
-	    }
 		
 		
 

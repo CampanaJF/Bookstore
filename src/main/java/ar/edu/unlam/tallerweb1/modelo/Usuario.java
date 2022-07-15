@@ -21,7 +21,7 @@ public class Usuario {
 	private String email;
 	
 	private String password;
-	private String rol;
+	
 	private Boolean activo = false;
 	
 	private Date fechaRegistro;
@@ -43,12 +43,6 @@ public class Usuario {
 	}
 	public void setPassword(String password) {
 		this.password = password;
-	}
-	public String getRol() {
-		return rol;
-	}
-	public void setRol(String rol) {
-		this.rol = rol;
 	}
 	public Boolean getActivo() {
 		return activo;

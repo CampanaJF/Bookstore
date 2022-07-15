@@ -43,7 +43,7 @@
 			  </div>
 			</div>
 			<div class="parallax">
-				<img class="" src="images/1884665.jpg" alt="Unsplashed background img 1">
+				<img class="" src="img/1884665.jpg" alt="Unsplashed background img 1">
 			</div>
 		</div>
 
@@ -58,7 +58,7 @@
 			  <div class="texto card medium">
 				<a href="">
 				<div class="card-image">
-				  <img src="images/book.jpeg"> <!--300x300-->
+				  <img src="img/book.jpeg"> <!--300x300-->
 				  <span class="card-title">Titulo de libro zero</span>
 				</div>
 				<div class="card-content">
