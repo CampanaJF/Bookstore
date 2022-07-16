@@ -1,5 +1,6 @@
 
 	<head>
+	
         <meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<!--Import Google Icon Font-->
@@ -12,6 +13,8 @@
 		<link href="css/parallax.css" rel="stylesheet">
 		<link href="css/buttonstyle.css" rel="stylesheet">
 		<link href="css/fonts.css" rel="stylesheet">
+		
+		<link rel="icon" href="<c:url value="/img/favicon.ico" />">
 
 		
 	</head>

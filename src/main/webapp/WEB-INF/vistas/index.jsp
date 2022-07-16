@@ -46,6 +46,29 @@
 				<img class="" src="img/1884665.jpg" alt="Unsplashed background img 1">
 			</div>
 		</div>
+		
+		<!--Container cards-->
+		<div class="container">
+
+			<h5 class="center tituloprincipal">Series Populares</h5>
+		<!--Cards-->
+		<div class="row section">
+			
+			<div class="col s6 m6 l3">
+			  <div class="texto card medium">
+				<a href="">
+				<div class="card-image">
+				  <img src="img/book.jpeg"> <!--300x300-->
+				  <span class="card-title">Titulo de Serie</span>
+				</div>
+				<div class="card-content">
+				  <p class="black-text">I am a very simple card. I am good at containing small bits of information.</p>
+				</div>
+				</a>
+			  </div>
+			</div>
+		
+		</div>
 
 		<!--Container cards-->
 		<div class="container">

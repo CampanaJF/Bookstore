@@ -1,12 +1,15 @@
 package ar.edu.unlam.tallerweb1.modelo;
 
 import java.util.Date;
+import java.util.Objects;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
+import javax.persistence.OneToOne;
 
 
 @Entity
@@ -19,6 +22,17 @@ public class Usuario {
 
 	@Column(unique=true)
 	private String email;
+	
+	@Lob
+	private String img;
+	
+	@OneToOne
+	private Premium premium;
+	
+	@Column(columnDefinition = "boolean default false")
+	private Boolean esPremium;
+	
+	private Long diasAVencimientoPremium;
 	
 	private String password;
 	
@@ -63,5 +77,41 @@ public class Usuario {
 	}
 	public void setFechaRegistro(Date fechaRegistro) {
 		this.fechaRegistro = fechaRegistro;
+	}
+	public Premium getPremium() {
+		return premium;
+	}
+	public void setPremium(Premium premium) {
+		this.premium = premium;
+	}
+	public Boolean getEsPremium() {
+		return esPremium;
+	}
+	public void setEsPremium(Boolean esPremium) {
+		this.esPremium = esPremium;
+	}
+	public Long getDiasAVencimientoPremium() {
+		return diasAVencimientoPremium;
+	}
+	public void setDiasAVencimientoPremium(Long diasAVencimientoPremium) {
+		this.diasAVencimientoPremium = diasAVencimientoPremium;
+	}
+	
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		Usuario usuario = (Usuario) o;
+		return Objects.equals(id, usuario.id) && Objects.equals(esPremium, usuario.esPremium)
+				&& Objects.equals(diasAVencimientoPremium, usuario.diasAVencimientoPremium) && Objects.equals(email, usuario.email)
+				&& Objects.equals(password, usuario.password) && Objects.equals(fechaRegistro, usuario.fechaRegistro)
+				&& Objects.equals(activo, usuario.activo)
+				&& Objects.equals(premium, usuario.premium)
+				&& Objects.equals(img, usuario.img);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id,esPremium, premium, email, password, diasAVencimientoPremium, fechaRegistro, activo, img);
 	}
 }

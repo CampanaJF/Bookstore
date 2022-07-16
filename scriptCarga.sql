@@ -9,10 +9,17 @@ insert into usuario (email,fechaRegistro,password) values
 					('nanana@nanana.com',substring(now(),1,11),'sana'),
 					('pacofranco45@gmail.com',substring(now(),1,11),'admin'),
 					('jucampana@alumno.unlam.edu.ar','2022-07-01','admin');
+                    
+insert into premium (fechaIncio,fechaFin,descripcion,precio) values
+					  (substring(now(),1,11),'2024-05-16','PremiumEscritor',200.00), /*Necesario para autor */
+				      (substring(now(),1,11),'2023-07-16','PremiumPlus',300.00);
+                    
+update usuario set premium_id=2,esPremium=true where usuario.id=2;
+update usuario set premium_id=1,esPremium=true where usuario.id=3;
 
-insert into autor (apellido,nombre,usuario_id) values
-				  ('Kurashki','June',2),
-				  ('Tsu','Sana',3);
+insert into autor (apellido,nombre,usuario_id,activo) values
+				  ('Kurashki','June',2,true),
+				  ('Tsu','Sana',3,true);
 
 insert into libro (lenguaje,publicado,sinopsis,titulo,autor_id) values
 					('Ingles',substring(now(),1,11),'Primer Libro','Uno',1),
@@ -29,3 +36,6 @@ insert into genero (id,genero) values
                     
 insert into generolibro (genero_id,libro_id) values 
 					(1,1),(2,1),(3,2),(6,2),(5,3),(4,4),(5,4),(6,4),(5,5),(2,5),(1,5); 
+                    
+
+	

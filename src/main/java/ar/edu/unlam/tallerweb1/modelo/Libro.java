@@ -14,7 +14,7 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Libro {
 
-	
+	//agregar paginas para calcular % leido
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -29,6 +29,9 @@ public class Libro {
 	private String sinopsis;
 	private String portada;
 	private String archivo;
+	
+	@Column(columnDefinition = "boolean default false")
+	private Boolean esPremium;
 	
 	private Date publicado;
 	
@@ -106,6 +109,14 @@ public class Libro {
 
 	public void setAutor(Autor autor) {
 		this.autor = autor;
+	}
+
+	public Boolean getEsPremium() {
+		return esPremium;
+	}
+
+	public void setEsPremium(Boolean esPremium) {
+		this.esPremium = esPremium;
 	}
 	
 	
