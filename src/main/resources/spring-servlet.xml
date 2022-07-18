@@ -26,4 +26,5 @@
     <mvc:resources mapping="/fonts/**" location="/fonts/" />
     <mvc:resources mapping="/images/**" location="/images/" />
     <mvc:resources mapping="/img/**" location="/img/" />
+    <mvc:resources mapping="/icons/**" location="/icons/" />
 </beans>

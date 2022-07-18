@@ -20,13 +20,21 @@ update usuario set premium_id=1,esPremium=true where usuario.id=3;
 insert into autor (apellido,nombre,usuario_id,activo) values
 				  ('Kurashki','June',2,true),
 				  ('Tsu','Sana',3,true);
+                  
+insert into serie (titulo) values ('El Brujero'),('Witcherer');
 
-insert into libro (lenguaje,publicado,sinopsis,titulo,autor_id,portada) values
-					('Ingles',substring(now(),1,11),'Primer Libro','Uno',1,'book'),
-					('Espanol',substring(now(),1,11),'Segundo Libro','Dos',1,'book'),
-					('Italiano',substring(now(),1,11),'Tercer Libro','Tres',2,'book'),
-					('Ingles',substring(now(),1,11),'Cuarto Libro','Cuatro',2,'book'),
-					('Espanol','2022-06-01','Quinto Libro','Cinco',2,'book');
+insert into serieautor (autor_id,serie_id) values (1,2),(2,1);
+
+insert into libro (lenguaje,publicado,sinopsis,titulo,autor_id,portada,esPremium,serie_id) values
+					('Ingles',substring(now(),1,11),'Primer Libro','Uno',1,'book',0,1),
+					('Espanol',substring(now(),1,11),'Segundo Libro','Dos',1,'book',0,2),
+					('Italiano',substring(now(),1,11),'Tercer Libro','Tres',2,'book',1,1),
+					('Ingles',substring(now(),1,11),'Cuarto Libro','Cuatro',2,'book',1,2),
+                    ('Ingles',substring(now(),1,11),'A Libro','A',1,'book',0),
+					('Espanol',substring(now(),1,11),'B Libro','B',1,'book',0),
+					('Italiano',substring(now(),1,11),'T Libro','T',2,'book',1),
+					('Ingles',substring(now(),1,11),'C Libro','C',2,'book',1),
+					('Espanol','2022-06-01','Quinto Libro','Cinco',2,'book',0);
                     
 insert into biblioteca (usuario_id,libro_id,estado) values 
 					(1,1,'Nuevo'),(1,2,'Pausa'),(1,3,'Progreso'),(1,4,'Terminado'),(1,5,'Dejado');

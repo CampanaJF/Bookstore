@@ -83,19 +83,32 @@
 			
 			<div class="col s6 m6 l3">
 			  <div class="texto card medium">
-				<a href="">
+				<a href="libro?libroId=${libros.id}">
 				<div class="card-image">
 				  <img src="img/${libros.portada}.jpeg"> <!--300x300-->
 				  <span class="card-title">${libros.titulo}</span>
 				</div>
 				<div class="card-content">
+				
+				<c:if test="${libros.lenguaje != 'Espanol'}">
+				  <img src="icons/${libros.lenguaje}.svg">
+				  <p class="black-text">${libros.lenguaje}</p>	
+				</c:if>
+				
+				<c:if test="${libros.lenguaje == 'Espanol'}">
+				  <img src="icons/espanol.svg">
+				  <p class="black-text">Español</p>	
+				</c:if>
+				
 				  <p class="black-text">${libros.sinopsis}</p>
+				  
 				</div>
 				</a>
 			  </div>
 			</div>
 			
 			</c:forEach>
+			
 		
 		</div>
 

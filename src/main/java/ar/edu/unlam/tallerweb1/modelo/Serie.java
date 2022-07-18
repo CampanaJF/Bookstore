@@ -28,9 +28,6 @@ public class Serie {
 	@Enumerated(EnumType.STRING)
 	private Estado estado;
 	
-	@ManyToOne
-	private Libro libro;
-	
 	public Long getId() {
 		return id;
 	}

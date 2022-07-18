@@ -30,10 +30,15 @@ public class Libro {
 	private String portada;
 	private String archivo;
 	
+	private Long paginas;
+	
 	@Column(columnDefinition = "boolean default false")
 	private Boolean esPremium;
 	
 	private Date publicado;
+	
+	@ManyToOne
+	private Serie serie;
 	
 	@ManyToOne
 	private Autor autor;

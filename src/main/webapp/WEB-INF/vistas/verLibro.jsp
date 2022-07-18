@@ -6,7 +6,7 @@
 <html>
 <%@include file="head.jsp"%>
 
-	<title>Libro titulo</title>
+	<title>${libro.titulo}</title>
 
 
 	<body class="orange lighten-4">

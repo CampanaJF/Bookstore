@@ -27,7 +27,7 @@ public class ControladorLibro {
 	  }
 
 
-	@RequestMapping(path = "/verLibro", method = RequestMethod.GET)
+	@RequestMapping(path = "/libro", method = RequestMethod.GET)
 	public ModelAndView verLibro(@RequestParam("libroId") Long libroId,HttpServletRequest request) {
 		
 		Libro obtenido = this.servicioLibro.getLibro(libroId);
@@ -35,7 +35,7 @@ public class ControladorLibro {
 		ModelMap model = new ModelMap();
 		
 		model.put("libro", obtenido);
-		return new ModelAndView("libro",model);
+		return new ModelAndView("verLibro",model);
 	}
 	
 	
