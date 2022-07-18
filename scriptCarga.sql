@@ -10,7 +10,7 @@ insert into usuario (email,fechaRegistro,password) values
 					('pacofranco45@gmail.com',substring(now(),1,11),'admin'),
 					('jucampana@alumno.unlam.edu.ar','2022-07-01','admin');
                     
-insert into premium (fechaIncio,fechaFin,descripcion,precio) values
+insert into premium (fechaInicio,fechaFin,descripcion,precio) values
 					  (substring(now(),1,11),'2024-05-16','PremiumEscritor',200.00), /*Necesario para autor */
 				      (substring(now(),1,11),'2023-07-16','PremiumPlus',300.00);
                     
@@ -21,12 +21,12 @@ insert into autor (apellido,nombre,usuario_id,activo) values
 				  ('Kurashki','June',2,true),
 				  ('Tsu','Sana',3,true);
 
-insert into libro (lenguaje,publicado,sinopsis,titulo,autor_id) values
-					('Ingles',substring(now(),1,11),'Primer Libro','Uno',1),
-					('Espanol',substring(now(),1,11),'Segundo Libro','Dos',1),
-					('Italiano',substring(now(),1,11),'Tercer Libro','Tres',2),
-					('Ingles',substring(now(),1,11),'Cuarto Libro','Cuatro',2),
-					('Espanol','2022-06-01','Quinto Libro','Cinco',2);
+insert into libro (lenguaje,publicado,sinopsis,titulo,autor_id,portada) values
+					('Ingles',substring(now(),1,11),'Primer Libro','Uno',1,'book'),
+					('Espanol',substring(now(),1,11),'Segundo Libro','Dos',1,'book'),
+					('Italiano',substring(now(),1,11),'Tercer Libro','Tres',2,'book'),
+					('Ingles',substring(now(),1,11),'Cuarto Libro','Cuatro',2,'book'),
+					('Espanol','2022-06-01','Quinto Libro','Cinco',2,'book');
                     
 insert into biblioteca (usuario_id,libro_id,estado) values 
 					(1,1,'Nuevo'),(1,2,'Pausa'),(1,3,'Progreso'),(1,4,'Terminado'),(1,5,'Dejado');

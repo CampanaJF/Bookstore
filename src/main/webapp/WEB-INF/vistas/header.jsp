@@ -2,14 +2,14 @@
 		<div class="navbar-fixed">
 		<nav class="teal lighten-5" role="navigation">
 			<div class="nav-wrapper container">
-			  <a id="logo-container" href="#" class="brand-logo">
+			  <a id="logo-container" href="home" class="brand-logo">
 				<span class="material-symbols-outlined">
 				bookmarks
 				</span></a>
 
 			  <ul class="right hide-on-med-and-down">
 			
-				<li><a class="valign-wrapper" href="#">
+				<li><a class="valign-wrapper" href="biblioteca">
 					<span class="material-symbols-outlined">auto_stories</span><span class="ps">Biblioteca</span></a>
 				</li>
 

@@ -1,5 +1,7 @@
 package ar.edu.unlam.tallerweb1.servicios;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +30,18 @@ public class ServicioLibroImpl implements ServicioLibro{
 		this.repositorioLibro = repositorioLibro;
 		this.repositorioUsuario= repositorioUsuario;
 		this.repositorioBiblioteca = repositorioBiblioteca;
+	}
+
+	@Override
+	public Libro getLibro(Long id) {
+		
+		return this.repositorioLibro.getLibro(id);
+	}
+
+	@Override
+	public List<Libro> getLibros() {
+		
+		return this.repositorioLibro.getLibros();
 	}
 
 	

@@ -14,7 +14,7 @@
 		<link href="css/buttonstyle.css" rel="stylesheet">
 		<link href="css/fonts.css" rel="stylesheet">
 		
-		<link rel="icon" href="<c:url value="/img/favicon.ico" />">
+		<link rel="icon" href="<c:url value="img/favicon.ico" />">
 
 		
 	</head>
