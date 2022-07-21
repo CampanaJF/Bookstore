@@ -20,8 +20,9 @@ body{
 
  /* label color */
  .input-field label {
-  color: #ef6c00;
+  color: #ef6c00 !important;
 }
+
 /* label focus color */
 .input-field input[type=text]:focus + label {
   color: #ef6c00;
@@ -41,19 +42,89 @@ body{
   border-bottom: 1px solid #ef6c00;
   box-shadow: 0 1px 0 0 #ef6c00;
 }
+
 /* icon prefix focus color */
 .input-field .prefix.active {
   color:  #ef6c00 ;
 }
      
-.ps{
-  padding-left: 0.5em;
+.icons{
+  height: 25px;
+  width: 25px;
+}
+
+/* label underline focus color */
+.input-field textarea:focus {
+  border-bottom: 1px solid #ef6c00 !important;
+  box-shadow: 0 1px 0 0 #ef6c00 !important;
+}
+/* valid color */
+.input-field textarea.valid {
+  border-bottom: 1px solid #ef6c00;
+  box-shadow: 0 1px 0 0 #ef6c00;
+}
+/* invalid color */
+.input-field textarea.invalid {
+  border-bottom: 1px solid #ef6c00;
+  box-shadow: 0 1px 0 0 #ef6c00;
+}
+
+.tags > li{
+  display: inline-block;
+}
+
+.portadalibro{
+  height: 100%;
+   width: 100%;
+   object-fit: contain
 }
 
 nav ul a:hover {
-  background-color: rgba(255, 224, 178, 0.7);
+  background-color: rgba(124, 187, 238, 0.7);
 }
 
-.notificationicon{
-  color: #e65100;
+#navmobile ul a:hover{
+  background-color: rgba(124, 187, 238, 0.7);
+  font-weight: 600;
 }
+
+span.badge {
+  font-family: 'Atkinson Hyperlegible', sans-serif;
+  font-weight: 300;
+  min-width: 3rem;
+  padding: 0 6px;
+  margin-left: 0px ;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 22px;
+  height: 22px;
+  color: #757575;
+  float: right;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+.dropdown-content li > a, .dropdown-content li > span {
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #ef6c00;
+  display: block;
+  line-height: 22px;
+  padding: 14px 16px;
+}
+
+.dropdown-content li > a:hover, .dropdown-content li > span.active {
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #64b5f6;
+  display: block;
+  line-height: 22px;
+  padding: 14px 16px;
+}
+
+.dropdownonit{
+  width:195px !important;
+}
+
+

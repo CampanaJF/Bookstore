@@ -23,6 +23,8 @@ public class Biblioteca {
 	
 	@Enumerated(EnumType.STRING)
 	private Estado estado;
+	
+	private Double puntuacion;
 
 	public Long getId() {
 		return id;
@@ -54,6 +56,14 @@ public class Biblioteca {
 
 	public void setEstado(Estado estado) {
 		this.estado = estado;
+	}
+
+	public Double getPuntuacion() {
+		return puntuacion;
+	}
+
+	public void setPuntuacion(Double puntuacion) {
+		this.puntuacion = puntuacion;
 	}
 
 	

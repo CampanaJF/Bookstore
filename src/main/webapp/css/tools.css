@@ -1,0 +1,59 @@
+.ps{
+    padding-left: 0.5em;
+  }
+
+.ps1{
+    padding-left: 1em;
+  }
+
+.pb{
+    padding-bottom: 0.5em;
+  }
+.pb1{
+    padding-bottom: 1.5em;
+  }
+.pe{
+    padding-right: 0.5em;
+  }
+  
+.pt{
+    padding-top: 0.5em;
+  }
+
+.mb{
+    margin-bottom: 0.5em;
+}
+.mb0{
+  margin-bottom: 0em;
+}
+.mt{
+    margin-top: 0.5em;
+}
+
+.mt1{
+    margin-top: 1em;
+}
+
+.meSpecial{
+    margin-right: -20px !important;
+}
+
+.linus{
+    line-height: 25px;
+}
+
+.notificationicon{
+    color: #e65100 !important;
+  }
+  
+  .iconrojo{
+  color:red;
+  }
+  
+  .iconazul{
+  color:blue;
+  }
+  
+  .iconverde{
+  color:green;
+  }

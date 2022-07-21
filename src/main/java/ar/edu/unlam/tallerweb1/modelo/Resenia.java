@@ -23,6 +23,8 @@ public class Resenia {
 	@ManyToOne
 	private Usuario creador;
 	
+	private Double puntuacion;
+	
 	private Date publicado;
 
 	public Long getId() {
@@ -63,6 +65,14 @@ public class Resenia {
 
 	public void setPublicado(Date publicado) {
 		this.publicado = publicado;
+	}
+
+	public Double getPuntuacion() {
+		return puntuacion;
+	}
+
+	public void setPuntuacion(Double puntuacion) {
+		this.puntuacion = puntuacion;
 	}
 	
 	

@@ -31,6 +31,7 @@ public class Libro {
 	private String archivo;
 	
 	private Long paginas;
+	private Double puntuacion;
 	
 	@Column(columnDefinition = "boolean default false")
 	private Boolean esPremium;
@@ -122,6 +123,22 @@ public class Libro {
 
 	public void setEsPremium(Boolean esPremium) {
 		this.esPremium = esPremium;
+	}
+
+	public Double getPuntuacion() {
+		return puntuacion;
+	}
+
+	public void setPuntuacion(Double puntuacion) {
+		this.puntuacion = puntuacion;
+	}
+
+	public Long getPaginas() {
+		return paginas;
+	}
+
+	public void setPaginas(Long paginas) {
+		this.paginas = paginas;
 	}
 	
 	

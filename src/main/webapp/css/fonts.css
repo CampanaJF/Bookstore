@@ -30,3 +30,14 @@ font-family: 'Atkinson Hyperlegible', sans-serif;
     text-decoration: none !important;
 }
 
+.minitexto{
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    font-weight: 300;
+    font-size:13px;
+    text-decoration: none !important;
+}
+
+.HeavyWeaponsGuy{
+    font-weight: 600;
+}
+

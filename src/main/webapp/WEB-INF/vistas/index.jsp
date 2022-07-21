@@ -9,7 +9,6 @@
 
 	<title>Home</title>
 
-
 	<body class="orange lighten-4">
 	
 	<%@include file="header.jsp" %>
@@ -46,11 +45,11 @@
 				<img class="" src="img/1884665.jpg" alt="Unsplashed background img 1">
 			</div>
 		</div>
-		
+
 		<!--Container cards-->
 		<div class="container">
 
-		<h5 class="center tituloprincipal">Series Populares</h5>
+			<h5 class="center tituloprincipal">Agregados Ultimamente</h5>
 		<!--Cards-->
 		<div class="row section">
 			
@@ -59,7 +58,7 @@
 				<a href="">
 				<div class="card-image">
 				  <img src="img/book.jpeg"> <!--300x300-->
-				  <span class="card-title">Titulo de Serie</span>
+				  <span class="card-title">Titulo de libro zero</span>
 				</div>
 				<div class="card-content">
 				  <p class="black-text">I am a very simple card. I am good at containing small bits of information.</p>
@@ -69,9 +68,10 @@
 			</div>
 		
 		</div>
+
+		
 		</div>
 		
-	
 		<!--Container cards-->
 		<div class="container">
 
@@ -91,13 +91,13 @@
 				<div class="card-content">
 				
 				<c:if test="${libros.lenguaje != 'Espanol'}">
-				  <img src="icons/${libros.lenguaje}.svg">
+				  <img src="img/${libros.lenguaje}.svg">
 				  <p class="black-text">${libros.lenguaje}</p>	
 				</c:if>
 				
 				<c:if test="${libros.lenguaje == 'Espanol'}">
-				  <img src="icons/espanol.svg">
-				  <p class="black-text">Español</p>	
+				  <img src="img/Espanol.svg">
+				  <p class="black-text">Espa&#241ol</p>	
 				</c:if>
 				
 				  <p class="black-text">${libros.sinopsis}</p>
@@ -108,16 +108,10 @@
 			</div>
 			
 			</c:forEach>
-			
-		
+
 		</div>
 
-		
-		</div>
-		
 		<%@include file="footer.jsp" %>
-
-		
 	</body>
 	
 	
