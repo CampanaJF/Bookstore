@@ -31,8 +31,6 @@ import java.util.ArrayList;
 
 
 
-
-
 @RunWith(MockitoJUnitRunner.class)
 @ContextConfiguration(locations= "classpath:applicationContext.xml")
 public class ControladorBibliotecaTest {

@@ -37,6 +37,7 @@ public class Libro {
 	private Boolean esPremium;
 	
 	private Date publicado;
+	private String publicadoS;
 	
 	@ManyToOne
 	private Serie serie;
@@ -139,6 +140,14 @@ public class Libro {
 
 	public void setPaginas(Long paginas) {
 		this.paginas = paginas;
+	}
+
+	public String getPublicadoS() {
+		return publicadoS;
+	}
+
+	public void setPublicadoS(String publicadoS) {
+		this.publicadoS = publicadoS;
 	}
 	
 	

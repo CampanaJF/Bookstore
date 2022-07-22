@@ -77,7 +77,7 @@
 					</c:if>
 
                     <span class="material-symbols-outlined iconrojo ps1">circle</span>
-                    <span class="ps minitexto">Publicado: ${publicado} , libro.estado </span>
+                    <span class="ps minitexto">Publicado: ${libro.publicadoS} , libro.estado </span>
                     <span class="material-symbols-outlined notificationicon ps1">star</span>
                     <span class="ps minitexto">${libro.puntuacion}</span>
                 </div>

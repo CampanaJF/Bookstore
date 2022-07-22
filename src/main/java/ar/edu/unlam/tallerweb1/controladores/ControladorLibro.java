@@ -29,31 +29,19 @@ public class ControladorLibro {
 	       this.servicioLibro = servicioLibro;
 
 	  }
-	 
-	 @RequestMapping(path = "/librogen", method = RequestMethod.GET)
-		public ModelAndView verLibroGen() {
-			
-			
-			return new ModelAndView("verLibro");
-		}
-
 
 	@RequestMapping(path = "/libro", method = RequestMethod.GET)
 	public ModelAndView verLibro(@RequestParam("libroId") Long libroId,HttpServletRequest request) {
 		
 		Libro libro = this.servicioLibro.getLibro(libroId);
 		
-		SimpleDateFormat formatofecha = new SimpleDateFormat ("dd-MM-yyyy");
 		
-		String fecha = formatofecha.format(libro.getPublicado());
-		
-	/*	Long autorid = libro.getAutor().getId();
-		
-		Autor autor = this.servicioAutor.getAutor(libroId); */
-		
+//		SimpleDateFormat formatofecha = new SimpleDateFormat ("dd-MM-yyyy");
+//		
+//		String fecha = formatofecha.format(libro.getPublicado());
+//		
 		ModelMap model = new ModelMap();
 		
-		model.put("publicado",fecha);
 		model.put("libro", libro);
 		return new ModelAndView("verLibro",model);
 	}
