@@ -1,6 +1,7 @@
 package ar.edu.unlam.tallerweb1.modelo;
 
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,7 +18,9 @@ public class Autor {
 		
 		private String nombre;
 		private String apellido;
-		private Boolean activo = false;
+		
+		@Column(columnDefinition = "boolean default false")
+		private Boolean activo;
 		
 		@OneToOne
 		private Usuario usuario;
@@ -46,9 +49,6 @@ public class Autor {
 		public void setActivo(Boolean activo) {
 			this.activo = activo;
 		}
-		public void activarAutor() {
-			activo = true;
-	    }
 		
 		
 

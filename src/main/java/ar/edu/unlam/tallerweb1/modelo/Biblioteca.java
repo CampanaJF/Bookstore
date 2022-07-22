@@ -1,6 +1,8 @@
 package ar.edu.unlam.tallerweb1.modelo;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -17,7 +19,12 @@ public class Biblioteca {
 	private Libro libro;
 	
 	@ManyToOne
-	private Usuario Usuario;
+	private Usuario usuario;
+	
+	@Enumerated(EnumType.STRING)
+	private Estado estado;
+	
+	private Double puntuacion;
 
 	public Long getId() {
 		return id;
@@ -36,11 +43,27 @@ public class Biblioteca {
 	}
 
 	public Usuario getUsuario() {
-		return Usuario;
+		return usuario;
 	}
 
 	public void setUsuario(Usuario usuario) {
-		Usuario = usuario;
+		this.usuario = usuario;
+	}
+	
+	public Estado getEstado() {
+		return estado;
+	}
+
+	public void setEstado(Estado estado) {
+		this.estado = estado;
+	}
+
+	public Double getPuntuacion() {
+		return puntuacion;
+	}
+
+	public void setPuntuacion(Double puntuacion) {
+		this.puntuacion = puntuacion;
 	}
 
 	

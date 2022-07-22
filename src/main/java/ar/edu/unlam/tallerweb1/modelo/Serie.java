@@ -9,7 +9,6 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 
 @Entity
 public class Serie {
@@ -28,12 +27,11 @@ public class Serie {
 	@Enumerated(EnumType.STRING)
 	private Estado estado;
 	
-	@ManyToOne
-	private Libro libro;
-	
 	public Long getId() {
 		return id;
 	}
+	
+	
 
 	public void setId(Long id) {
 		this.id = id;
@@ -79,15 +77,6 @@ public class Serie {
 		this.estado = estado;
 	}
 
-	public Libro getLibro() {
-		return libro;
-	}
-
-	public void setLibro(Libro libro) {
-		this.libro = libro;
-	}
-
-	
 	
 	
 }

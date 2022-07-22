@@ -14,7 +14,7 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Libro {
 
-	
+	//agregar paginas para calcular % leido
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -25,15 +25,22 @@ public class Libro {
 	@Enumerated(EnumType.STRING)
 	private Lenguaje lenguaje;
 	
-	@Enumerated(EnumType.STRING)
-	private Estado estado;
-	
 	private String referencia;
 	private String sinopsis;
 	private String portada;
 	private String archivo;
 	
+	private Long paginas;
+	private Double puntuacion;
+	
+	@Column(columnDefinition = "boolean default false")
+	private Boolean esPremium;
+	
 	private Date publicado;
+	private String publicadoS;
+	
+	@ManyToOne
+	private Serie serie;
 	
 	@ManyToOne
 	private Autor autor;
@@ -62,13 +69,6 @@ public class Libro {
 		this.lenguaje = lenguaje;
 	}
 
-	public Estado getEstado() {
-		return estado;
-	}
-
-	public void setEstado(Estado estado) {
-		this.estado = estado;
-	}
 
 	public String getReferencia() {
 		return referencia;
@@ -116,6 +116,38 @@ public class Libro {
 
 	public void setAutor(Autor autor) {
 		this.autor = autor;
+	}
+
+	public Boolean getEsPremium() {
+		return esPremium;
+	}
+
+	public void setEsPremium(Boolean esPremium) {
+		this.esPremium = esPremium;
+	}
+
+	public Double getPuntuacion() {
+		return puntuacion;
+	}
+
+	public void setPuntuacion(Double puntuacion) {
+		this.puntuacion = puntuacion;
+	}
+
+	public Long getPaginas() {
+		return paginas;
+	}
+
+	public void setPaginas(Long paginas) {
+		this.paginas = paginas;
+	}
+
+	public String getPublicadoS() {
+		return publicadoS;
+	}
+
+	public void setPublicadoS(String publicadoS) {
+		this.publicadoS = publicadoS;
 	}
 	
 	

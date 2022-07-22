@@ -1,68 +1,80 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
-<html>
+<!--Nav-->
+<div class="navbar-fixed">
+	<nav class="teal lighten-5" role="navigation">
+		<div class="nav-wrapper container">
+		  <a id="logo-container" href="home" class="brand-logo">
+			<img class="pt" src="img/favicon-32x32.png"></a>
 
-	<head>
-	
-        <meta charset="ISO-8859-1">
-	    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-	     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">  
-       <link href="css/estilos.css" rel="stylesheet">
-	   
-	</head>
-	
-<body>
-	
-<header> 
-<nav class="navbar navbar-expand-md navbar-dark bg-dark" aria-label="Fourth navbar example">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="home">Bookstore</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+				<a href="#" data-target="nav-mobile" class="sidenav-trigger">
+					 <i class="material-icons">menu</i></a>
 
-      <div class="collapse navbar-collapse" id="navbarsExample04">
-        <ul class="navbar-nav me-auto mb-2 mb-md-0">
-          <li class="nav-item">
-            <a class="nav-text nav-link" href="perfil">Mi Perfil</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-text nav-link" href="#">Nuevo Libro</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-text nav-link" href="biblioteca">Mi Biblioteca</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-text nav-link" href="libreria">Explorar</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-text nav-link" href="#">Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-text nav-link" href="#">Registrarse</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-text nav-link" href="#">Logout</a>
-          </li>
-        </ul>
-        <form>
-          <input class="form-control" type="text" placeholder="Search" aria-label="Search">
-        </form>
-      </div>
-    </div>
-  </nav>
-  
-</header>
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" ></script>
-		<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-		 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-		  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-		 
+		  <ul class="right hide-on-med-and-down">
 		
-</body>
+			<li><a class="valign-wrapper" href="biblioteca">
+				<span class="material-symbols-outlined">auto_stories</span><span class="ps">Biblioteca</span></a>
+			</li>
+
+			<li><a class="valign-wrapper" href="librogen">
+				<span class="material-symbols-outlined">history_edu</span><span class="ps">Nuevo Libro</span></a>
+			</li>
+
+			<li><a class="valign-wrapper" href="#">
+				<span class="material-symbols-outlined notificationicon">workspace_premium</span>
+				<span class="ps">&#161Hacete Premium!</span></a>
+			</li>
+			
+			<li><a class="valign-wrapper" href="#">
+				<span class="material-symbols-outlined">person</span>
+				<span class="ps">Perfil</span></a>
+			</li>
+			
+			<li><a class="valign-wrapper" href="#">
+				<span class="material-symbols-outlined">door_open</span><span class="ps">Login</span></a>
+			</li>
+
+			<li><a class="valign-wrapper" href="#">
+				<span class="material-symbols-outlined">app_registration</span><span class="ps">Registrarse</span></a>
+			</li>
+
+			<li>
+				<a class="valign-wrapper" href="">
+					<span class="material-symbols-outlined notificationicon">notifications</span>
+					<span class="subtitulo">4!</span></a>
+			</li>
+	
+		  </ul>
+		   </div>	
+	</nav>
+
+
+</div>
+
+
+ <div id="navmobile">
+	  <ul id="nav-mobile" class="sidenav">
+
+		   <li><a class="" href="biblioteca">
+				<i class="material-icons">auto_stories</i>Biblioteca</a></li>
+
+		   <li><a class="valign-wrapper" href="#">
+				<i class="material-symbols-outlined">history_edu</i>Nuevo Libro</a></li>
+
+		   <li><a class="valign-wrapper" href="#">
+		   <i class="material-symbols-outlined notificationicon">workspace_premium</i>&#161Hacete Premium!</a></li>
+
+		   <li><a class="guh" href="#">
+				<i class="material-symbols-outlined">person</i>Perfil</a></li>
+
+		   <li><a class="valign-wrapper" href="#">
+				<i class="material-symbols-outlined">door_open</i>Login</a></li>
+
+		   <li><a class="valign-wrapper" href="#">
+				<i class="material-symbols-outlined">app_registration</i>Registrarse</a></li>
+
+		   <li><a class="valign-wrapper" href="">
+				<i class="material-symbols-outlined notificationicon">notifications</i>4!</a></li>
+	  </ul>
+ </div>
 	
 	
-	
-</html>
