@@ -38,6 +38,7 @@ public class RepositorioBibliotecaImpl implements RepositorioBiblioteca {
 		getSession().save(biblioteca);
 		
 		return true;
+		
 		}
 		 	
 		return false;
@@ -84,6 +85,15 @@ public class RepositorioBibliotecaImpl implements RepositorioBiblioteca {
 		Criterion rest1 = Restrictions.eq("usuario.id",id);
 		
 		return getSession().createCriteria(Biblioteca.class).add(rest1).list();
+	}
+
+	@Override
+	public void borrar(Long id, Long id2) {
+		
+		Biblioteca b = getBiblioteca(id,id2);
+		
+		getSession().delete(b);
+		
 	}
 
 }

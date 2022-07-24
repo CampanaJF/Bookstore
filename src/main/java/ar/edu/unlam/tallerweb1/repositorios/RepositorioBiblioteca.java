@@ -20,4 +20,6 @@ public interface RepositorioBiblioteca {
 
 	List<Biblioteca> getBiblbiotecaDeUsuario(Long id);
 
+	void borrar(Long id, Long id2);
+
 }

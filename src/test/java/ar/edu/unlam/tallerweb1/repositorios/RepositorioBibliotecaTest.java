@@ -22,8 +22,40 @@ public class RepositorioBibliotecaTest extends SpringTest {
     @Autowired
     private RepositorioBiblioteca repositorioBiblioteca;
    
-    
     @Test
+    @Transactional
+    @Rollback
+    public void queSeGuardeUnLibroEnLaBibliotecaDeUnUsuario() {
+    	
+    	Libro L1= givenLibro("A");
+    	Libro L2= givenLibro("B");
+    	Usuario U0 = givenUsuario("0");
+    	Biblioteca B0 = givenBiblioteca(L1,U0);
+    	B0.setEstado(Estado.Nuevo);
+
+    	session().save(L1);
+    	session().save(L2);
+    	session().save(U0);
+    	session().save(B0);
+
+    	whenSeGuardaEnLaBiblioteca(B0);
+    	List<Biblioteca> b= whenSeTraeLaBibliotecaDeEseUsuario(U0);
+
+    	thenSeGuardoCorrectamente(b,L1,U0);
+    }
+    
+    private void thenSeGuardoCorrectamente(List<Biblioteca> b,Libro L1,Usuario U0) {
+		assertThat(b.get(0).getLibro()).isEqualTo(L1);
+		assertThat(b.get(0).getUsuario()).isEqualTo(U0);
+		assertThat(b.size()).isEqualTo(1);
+	}
+
+	private void whenSeGuardaEnLaBiblioteca(Biblioteca B0) {
+		repositorioBiblioteca.guardar(B0);
+		
+	}
+
+	@Test
     @Transactional
     @Rollback
     public void queSeTraiganLasBibliotecasEnLasQueEstaUnLibro() {
@@ -79,7 +111,7 @@ public class RepositorioBibliotecaTest extends SpringTest {
 	@Test
     @Transactional
     @Rollback
-    public void queSeTraiganTodasLosLibrosDeUnUsuario() {
+    public void queSeTraiganTodosLosLibrosDeUnUsuario() {
     	
 		Libro L1= givenLibro("A");
     	Libro L2= givenLibro("B");
