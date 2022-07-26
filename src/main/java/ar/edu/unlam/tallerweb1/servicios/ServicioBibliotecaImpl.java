@@ -31,6 +31,11 @@ public class ServicioBibliotecaImpl implements ServicioBiblioteca {
 	}
 	
 	@Override
+	public Biblioteca getBiblioteca(Long Lid,Long Uid) {
+		return this.repositorioBiblioteca.getBiblioteca(Lid, Uid);
+	}
+	
+	@Override
 	public void cambiarPuntuacion(Long id, Long id2, Double p) {
 		if(!(validarBibliotecaExistente(id,id2))) {
 			throw new LibroNoExisteEnBibliotecaException();
@@ -66,7 +71,7 @@ public class ServicioBibliotecaImpl implements ServicioBiblioteca {
 		Usuario usuario = this.repositorioUsuario.getUsuario(Uid);
 		Libro libro = this.repositorioLibro.getLibro(Lid);
 		
-		if(!(validarBibliotecaExistente(Lid,Uid))) {
+		if(validarBibliotecaExistente(Lid,Uid)) {
 		
 			throw new LibroExisteEnBibliotecaException();
 		}

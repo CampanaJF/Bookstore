@@ -17,7 +17,7 @@ import ar.edu.unlam.tallerweb1.modelo.Usuario;
 import ar.edu.unlam.tallerweb1.repositorios.RepositorioBiblioteca;
 import ar.edu.unlam.tallerweb1.repositorios.RepositorioLibro;
 import ar.edu.unlam.tallerweb1.repositorios.RepositorioUsuario;
-import static org.assertj.core.api.Assertions.*;
+
 
 public class ServicioBibliotecaTest {
 	
@@ -33,7 +33,6 @@ public class ServicioBibliotecaTest {
     	
     	Libro L0 = givenLibro("L");
     	Usuario U0 = givenUsuario("Q");
-    	Biblioteca B0 = givenBiblioteca(L0,U0);
 
     	when(repositorioBiblioteca.getBiblioteca(L0.getId(),U0.getId())).thenReturn(null);
     		

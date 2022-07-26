@@ -17,4 +17,6 @@ public interface ServicioBiblioteca {
 
 	void quitarDeBiblioteca(Long id, Long id2);
 
+	Biblioteca getBiblioteca(Long Lid, Long Uid);
+
 }
