@@ -117,6 +117,14 @@ public class Libro {
 	public void setAutor(Autor autor) {
 		this.autor = autor;
 	}
+	
+	public Serie getSerie() {
+		return serie;
+	}
+
+	public void setSerie(Serie serie) {
+		this.serie = serie;
+	}
 
 	public Boolean getEsPremium() {
 		return esPremium;

@@ -20,5 +20,16 @@ public class ServicioSessionImpl implements ServicioSession{
 		request.getSession().setAttribute("ID",id);
 	}
 
+	@Override
+	public Long getLibroId(HttpServletRequest request) {
+		return (Long)request.getSession().getAttribute("LID");
+	}
+
+	@Override
+	public void setLibroId(Long id, HttpServletRequest request) {
+		request.getSession().setAttribute("LID",id);
+		
+	}
+
     
 }

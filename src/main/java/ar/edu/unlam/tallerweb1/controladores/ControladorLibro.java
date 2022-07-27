@@ -36,21 +36,25 @@ public class ControladorLibro {
 	public ModelAndView verLibro(@RequestParam("libroId") Long libroId,HttpServletRequest request) {
 		
 		Libro libro = this.servicioLibro.getLibro(libroId);
-		
+
 		Long userId = this.servicioSession.getUserId(request);
 		
 		ModelMap model = new ModelMap();
 		
-		if(userId!=null) {
+		
+		if (userId==null) {
+			model.put("libro", libro);
+			return new ModelAndView("libro",model);
+        }
+		
 		Biblioteca biblioteca = this.servicioBiblioteca.getBiblioteca(libroId, userId);
-		model.put("biblioteca", biblioteca);
-		}
 		
 //		SimpleDateFormat formatofecha = new SimpleDateFormat ("dd-MM-yyyy");
 //		
 //		String fecha = formatofecha.format(libro.getPublicado());		
-
-		model.put("userId", userId);
+		
+		model.put("biblioteca", biblioteca);
+		model.put("usuario", userId);
 		model.put("libro", libro);
 		return new ModelAndView("libro",model);
 	}

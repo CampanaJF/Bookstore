@@ -7,4 +7,8 @@ public interface ServicioSession {
 	Long getUserId(HttpServletRequest request);
 
 	void setUserId(Long id, HttpServletRequest request);
+	
+	Long getLibroId(HttpServletRequest request);
+
+	void setLibroId(Long id, HttpServletRequest request);
 }
