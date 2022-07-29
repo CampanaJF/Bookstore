@@ -10,8 +10,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import ar.edu.unlam.tallerweb1.modelo.Genero;
+import ar.edu.unlam.tallerweb1.modelo.GeneroLibro;
 import ar.edu.unlam.tallerweb1.modelo.Lenguaje;
 import ar.edu.unlam.tallerweb1.modelo.Libro;
+import ar.edu.unlam.tallerweb1.modelo.Resenia;
 
 
 @SuppressWarnings({ "unchecked", "deprecation" })
@@ -42,6 +45,20 @@ public class RepositorioLibroImpl implements RepositorioLibro {
 		
 		return (Libro) getSession().createCriteria(Libro.class).add(rest1).uniqueResult();
 	}
+	
+	@Override
+	public List<GeneroLibro> getGenerosLibro(Long Lid) {
+		Criterion rest1 = Restrictions.eq("libro.id",Lid);
+		
+		return getSession().createCriteria(GeneroLibro.class).add(rest1).list();
+	}
+
+	@Override
+	public List<Resenia> getReseniasLibro(Long Lid) {
+		Criterion rest1 = Restrictions.eq("libro.id",Lid);
+		
+		return getSession().createCriteria(Resenia.class).add(rest1).list();
+	}
 		
 	@Override
 	public Libro buscarLibroXTitulo(String titulo) {
@@ -61,8 +78,6 @@ public class RepositorioLibroImpl implements RepositorioLibro {
 		return null;
 	}
 
-	
 
-	
 
 }

@@ -85,7 +85,7 @@
 			  <div class="texto card medium">
 				<a href="libro?libroId=${libros.id}">
 				<div class="card-image">
-				  <img src="img/${libros.portada}.jpeg"> <!--300x300-->
+				  <img src="<c:url value="/img/${libros.portada}.jpeg"/>"> <%-- 300x300 --%>
 				  <span class="card-title">${libros.titulo}</span>
 				</div>
 				<div class="card-content">
@@ -100,7 +100,7 @@
 				  <p class="black-text">Espa&#241ol</p>	
 				</c:if>
 				
-				  <p class="black-text">${libros.sinopsis}</p>
+				  <p class="black-text">${libros.autor.nombre} ${libros.autor.apellido}</p>
 				  
 				</div>
 				</a>

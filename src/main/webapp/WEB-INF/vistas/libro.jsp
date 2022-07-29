@@ -24,7 +24,7 @@
 	<div class="row section">
 		
 		<div class="col s6 m6 l5">
-			<img class="portadalibro" src="img/brujero.jpg">
+			 <img class="portadalibro" src="<c:url value="/img/${libro.portada}.jpeg"/>">
 			
 		</div>
 
@@ -129,27 +129,15 @@
                 <span class=" col l2 texto mt1 HeavyWeaponsGuy meSpecial">Generos:</span>
                 <ul class="tags col l10">
                 
-                <c:forEach items="${generos}" var="genero">
+                <c:forEach items="${generos}" var="generos">
                 
-                    <li><a href=""><span data-badge-caption="${genero.genero}"
+                    <li><a href=""><span data-badge-caption="${generos.genero}"
                          class="blue lighten-2 new badge"></span></a></li>
                          
                  </c:forEach>
                    
                 </ul>
 
-                <span class="col l2 texto mt1 HeavyWeaponsGuy meSpecial">Temas:</span>
-                <ul class="tags col l10">
-                
-                <c:forEach items="${temas}" var="tema">
-                
-                    <li><a href=""><span data-badge-caption="${tema.tema}"
-                         class="blue lighten-2 new badge"></span></a></li>
-                         
-                 </c:forEach>
-               
-                  
-                </ul>
    
 		</div>
 
@@ -170,7 +158,7 @@
 
      <h6 class="pt tituloprincipal">Rese&#241ias</h6>
 
-				<c:if test="${empty usuario}">
+				<c:if test="${not empty usuario}">
                <div class="row">
                     <form class="col s12">
                     <div class="row">
@@ -185,55 +173,22 @@
                </div>
                
                </c:if>
+               
+               <c:forEach items="${resenias}" var="resenias"> 
           
                <div class="mb0 pb row section valign-wrapper" >
                     <img class="icons circle" src="img/favicon-32x32.png">
-                    <span class="ps minitexto">Apelldio Nombre</span>
+                    <span class="ps minitexto">${resenias.creador.nombre}</span>
                     <span class="material-symbols-outlined notificationicon ps1">star</span>
-                    <span class="ps minitexto">9.99</span>
+                    <span class="ps minitexto">${resenias.puntuacion}</span>
                 </div>
 
                <blockquote class=" texto"> 
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Non aut aliquam pariatur alias aperiam molestiae, 
-                    veniam tempora ratione culpa in, earum quam. Id neque doloremque minima facilis officia, ex quia.
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Non aut aliquam pariatur alias aperiam molestiae, 
-                    veniam tempora ratione culpa in, earum quam. Id neque doloremque minima facilis officia, ex quia.</p>
+                    <p>${resenias.resenia}</p>
                </blockquote>
 
+			</c:forEach>
 
-               <div class="mb0 pb row section valign-wrapper" >
-                    <img class="icons circle" src="img/favicon-32x32.png">
-                    <span class="ps minitexto">Apelldio Nombre</span>
-                    <span class="material-symbols-outlined notificationicon ps1">star</span>
-                    <span class="ps minitexto">9.99</span>
-                </div>
-
-               <blockquote class=" texto"> 
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Non aut aliquam pariatur alias aperiam molestiae, 
-                    veniam tempora ratione culpa in, earum quam. Id neque doloremque minima facilis officia, ex quia.
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Non aut aliquam pariatur alias aperiam molestiae, 
-                    veniam tempora ratione culpa in, earum quam. Id neque doloremque minima facilis officia, ex quia.</p>
-               </blockquote>
-
-               <div class="mb0 mt pb row section valign-wrapper" >
-                    <img class="icons circle" src="img/favicon-32x32.png">
-                    <span class="ps minitexto">Apelldio Nombre</span>
-                    <span class="material-symbols-outlined notificationicon ps1">star</span>
-                    <span class="ps minitexto">9.99</span>
-                </div>
-
-               <blockquote class=" texto"> 
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Non aut aliquam pariatur alias aperiam molestiae, 
-                    veniam tempora ratione culpa in, earum quam. Id neque doloremque minima facilis officia, ex quia.
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Non aut aliquam pariatur alias aperiam molestiae, 
-                    veniam tempora ratione culpa in, earum quam. Id neque doloremque minima facilis officia, ex quia.</p>
-               </blockquote>
 
        </div>        
 

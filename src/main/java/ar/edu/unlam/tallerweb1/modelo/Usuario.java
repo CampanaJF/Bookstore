@@ -23,6 +23,9 @@ public class Usuario {
 	@Column(unique=true)
 	private String email;
 	
+	@Column(unique=true)
+	private String nombre;
+	
 	@Lob
 	private String img;
 	
@@ -97,6 +100,18 @@ public class Usuario {
 		this.diasAVencimientoPremium = diasAVencimientoPremium;
 	}
 	
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	public String getImg() {
+		return img;
+	}
+	public void setImg(String img) {
+		this.img = img;
+	}
 	@Override
 	public boolean equals(Object o) {
 		if (this == o) return true;

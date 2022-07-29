@@ -1,5 +1,6 @@
 package ar.edu.unlam.tallerweb1.servicios;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -7,13 +8,11 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import ar.edu.unlam.tallerweb1.modelo.Biblioteca;
-import ar.edu.unlam.tallerweb1.modelo.Estado;
+import ar.edu.unlam.tallerweb1.modelo.Genero;
+import ar.edu.unlam.tallerweb1.modelo.GeneroLibro;
 import ar.edu.unlam.tallerweb1.modelo.Libro;
-import ar.edu.unlam.tallerweb1.modelo.Usuario;
-import ar.edu.unlam.tallerweb1.repositorios.RepositorioBiblioteca;
+import ar.edu.unlam.tallerweb1.modelo.Resenia;
 import ar.edu.unlam.tallerweb1.repositorios.RepositorioLibro;
-import ar.edu.unlam.tallerweb1.repositorios.RepositorioUsuario;
 
 
 @Service("servicioLibro")
@@ -21,15 +20,11 @@ import ar.edu.unlam.tallerweb1.repositorios.RepositorioUsuario;
 public class ServicioLibroImpl implements ServicioLibro{
 	
 	private RepositorioLibro repositorioLibro;
-	private RepositorioUsuario repositorioUsuario;
-	private RepositorioBiblioteca repositorioBiblioteca;
+
 
 	@Autowired
-	public ServicioLibroImpl(RepositorioLibro repositorioLibro,
-			RepositorioUsuario repositorioUsuario,RepositorioBiblioteca repositorioBiblioteca){
+	public ServicioLibroImpl(RepositorioLibro repositorioLibro){
 		this.repositorioLibro = repositorioLibro;
-		this.repositorioUsuario= repositorioUsuario;
-		this.repositorioBiblioteca = repositorioBiblioteca;
 	}
 
 	@Override
@@ -42,6 +37,29 @@ public class ServicioLibroImpl implements ServicioLibro{
 	public List<Libro> getLibros() {
 		
 		return this.repositorioLibro.getLibros();
+	}
+
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	@Override
+	public List<Genero> getGenerosLibro(Long Lid) {
+		
+		
+		List<GeneroLibro> generosLibro = this.repositorioLibro.getGenerosLibro(Lid);
+		List<Genero> generos = new ArrayList();
+		GeneroLibro GL;
+		
+		for (int i = 0; i < generosLibro.size(); i++) {
+			GL=generosLibro.get(i);
+			generos.add(GL.getGenero());
+		}
+		
+		return generos;
+	}
+
+	@Override
+	public List<Resenia> getReseniasLibro(Long Lid) {
+		
+		return this.repositorioLibro.getReseniasLibro(Lid);
 	}
 
 	

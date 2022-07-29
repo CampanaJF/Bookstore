@@ -67,7 +67,7 @@ public class ControladorLibroTest {
 	}
 	 
 	private void thenLaVistaEsCorrecta() {
-		assertThat( mav.getViewName() ).isEqualTo( "verLibro");
+		assertThat( mav.getViewName() ).isEqualTo( "libro");
 			
 	}
 	

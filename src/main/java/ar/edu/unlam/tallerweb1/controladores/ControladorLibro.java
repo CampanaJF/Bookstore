@@ -1,5 +1,7 @@
 package ar.edu.unlam.tallerweb1.controladores;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import ar.edu.unlam.tallerweb1.modelo.Biblioteca;
+import ar.edu.unlam.tallerweb1.modelo.Genero;
 import ar.edu.unlam.tallerweb1.modelo.Libro;
+import ar.edu.unlam.tallerweb1.modelo.Resenia;
 import ar.edu.unlam.tallerweb1.servicios.ServicioBiblioteca;
 import ar.edu.unlam.tallerweb1.servicios.ServicioLibro;
 import ar.edu.unlam.tallerweb1.servicios.ServicioSession;
@@ -39,11 +43,17 @@ public class ControladorLibro {
 
 		Long userId = this.servicioSession.getUserId(request);
 		
+		List<Genero> generos= this.servicioLibro.getGenerosLibro(libroId); 
+		
+		List<Resenia> resenias= this.servicioLibro.getReseniasLibro(libroId); 
+		
 		ModelMap model = new ModelMap();
 		
 		
 		if (userId==null) {
 			model.put("libro", libro);
+			model.put("generos", generos);
+			model.put("resenias", resenias);
 			return new ModelAndView("libro",model);
         }
 		
@@ -53,6 +63,8 @@ public class ControladorLibro {
 //		
 //		String fecha = formatofecha.format(libro.getPublicado());		
 		
+		model.put("generos", generos);
+		model.put("resenias", resenias);
 		model.put("biblioteca", biblioteca);
 		model.put("usuario", userId);
 		model.put("libro", libro);
