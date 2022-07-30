@@ -16,8 +16,10 @@ public interface RepositorioBiblioteca {
 
 	void cambiarEstado(Long l, Long u,Estado e);
 
-	List<Biblioteca> getBiblbiotecasDeLibro(Long id);
+	List<Biblioteca> getBibliotecasDelLibro(Long id);
 
-	List<Biblioteca> getBiblbiotecaDeUsuario(Long id);
+	List<Biblioteca> getBibliotecasDelUsuario(Long id);
+
+	void borrar(Long id, Long id2);
 
 }

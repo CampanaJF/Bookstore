@@ -23,6 +23,7 @@ import ar.edu.unlam.tallerweb1.modelo.Usuario;
 import ar.edu.unlam.tallerweb1.servicios.ServicioAutor;
 import ar.edu.unlam.tallerweb1.servicios.ServicioBiblioteca;
 import ar.edu.unlam.tallerweb1.servicios.ServicioLibro;
+import ar.edu.unlam.tallerweb1.servicios.ServicioSession;
 
 @RunWith(MockitoJUnitRunner.class)
 @ContextConfiguration(locations= "classpath:applicationContext.xml")
@@ -30,11 +31,11 @@ public class ControladorLibroTest {
 	
 
 	private final ServicioBiblioteca servicioBiblioteca = mock(ServicioBiblioteca.class);
-	private final ServicioAutor servicioAutor = mock(ServicioAutor.class);
 	private final ServicioLibro servicioLibro = mock(ServicioLibro.class);
+	private final ServicioSession servicioSession = mock(ServicioSession.class);
 	
 	
-	private final ControladorLibro controladorLibro = new ControladorLibro(servicioLibro,servicioAutor);
+	private final ControladorLibro controladorLibro = new ControladorLibro(servicioLibro,servicioBiblioteca,servicioSession);
 	
 	private final HttpServletRequest mockRequest = mock(HttpServletRequest.class);
 	private final HttpSession mockSession = mock(HttpSession.class);
@@ -66,7 +67,7 @@ public class ControladorLibroTest {
 	}
 	 
 	private void thenLaVistaEsCorrecta() {
-		assertThat( mav.getViewName() ).isEqualTo( "verLibro");
+		assertThat( mav.getViewName() ).isEqualTo( "libro");
 			
 	}
 	
