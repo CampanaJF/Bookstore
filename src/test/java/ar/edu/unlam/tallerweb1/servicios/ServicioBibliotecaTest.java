@@ -1,10 +1,13 @@
 package ar.edu.unlam.tallerweb1.servicios;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 import org.junit.Test;
@@ -27,6 +30,51 @@ public class ServicioBibliotecaTest {
 	private ServicioBibliotecaImpl servicioBiblioteca = new ServicioBibliotecaImpl(repositorioLibro,
 																				   repositorioUsuario,
 																				   repositorioBiblioteca);
+	
+	
+	@Test
+    public void queSeCalculeLaPuntuacionPromedioDeUnLibro() {
+    	
+    	Libro L1 = givenLibro("L1");
+    	Usuario U1 = givenUsuario("U1");
+    	Usuario U2 = givenUsuario("U2");
+    	Usuario U3 = givenUsuario("U3");
+    	Usuario U4 = givenUsuario("U4");
+    	Biblioteca B1 = givenBiblioteca(L1,U1);
+    	Biblioteca B2 = givenBiblioteca(L1,U2);
+    	Biblioteca B3 = givenBiblioteca(L1,U3);
+    	Biblioteca B4 = givenBiblioteca(L1,U4);
+    	B1.setPuntuacion(3.0);
+    	B2.setPuntuacion(7.0);
+    	B3.setPuntuacion(9.0);
+    	B4.setPuntuacion(10.0);
+    	
+    	List <Biblioteca> B = new ArrayList();
+    	B.add(B1);
+    	B.add(B2);
+    	B.add(B3);
+    	B.add(B4);
+
+    	when(repositorioBiblioteca.getBibliotecasDelLibro(L1.getId())).thenReturn(B);
+	
+    	Double obtenido;
+    	obtenido = whenCalculoPuntuacion(L1.getId());
+    	
+    	thenObtengoPuntuacionDelLibro(L1.getId(),obtenido);
+    	
+    }
+	
+	private void thenObtengoPuntuacionDelLibro(Long id,Double p) {
+		verify(repositorioLibro,times(1)).setPuntuacionLibro(id,p);
+		verify(repositorioBiblioteca,times(1)).getBibliotecasDelLibro(id);
+		assertThat(p).isEqualTo(7.25);
+	
+	}
+
+	private Double whenCalculoPuntuacion(Long id) {
+		 return servicioBiblioteca.calcularPuntuacionLibro(id);
+		
+	}
 	
 	@Test(expected = LibroNoExisteEnBibliotecaException.class)
     public void queNoSePuedaQuitarUnLibroQueNoEstaBiblioteca() {
@@ -105,11 +153,13 @@ public class ServicioBibliotecaTest {
     	Usuario U0 = givenUsuario("Q");
     	Biblioteca B0 = givenBiblioteca(L0,U0);
     	Double P = 9.99;
+    	List <Biblioteca> B = new ArrayList();
+    	B.add(B0);
     	
     	
 
     	when(repositorioBiblioteca.getBiblioteca(L0.getId(),U0.getId())).thenReturn(B0);
-    		
+    	when(repositorioBiblioteca.getBibliotecasDelLibro(L0.getId())).thenReturn(B);	
     	whenCambioLaPuntuacion(L0.getId(),U0.getId(),P);
     	
     	thenSeCambioLaPuntuacion(L0.getId(),U0.getId(),P);
@@ -131,14 +181,13 @@ public class ServicioBibliotecaTest {
     	
     	Libro A = givenLibro("L");
     	Usuario Q = givenUsuario("Q");
-    	//Usuario B = givenUsuario("B");
-    	Boolean Z = true;
+    	Boolean Z = false;
     	Biblioteca B = givenBiblioteca(A,Q);
     	
     	when(repositorioUsuario.getUsuario(Q.getId())).thenReturn(Q);
     	when(repositorioLibro.getLibro(A.getId())).thenReturn(A);
     	when(repositorioBiblioteca.guardar(B)).thenReturn(Z);
-    	when(repositorioBiblioteca.getBiblioteca(A.getId(),Q.getId())).thenReturn(B);
+    	when(repositorioBiblioteca.getBiblioteca(A.getId(),Q.getId())).thenReturn(null);
     	
     	whenAgregoABiblioteca(A,Q);
     	whenGuardoBiblioteca(B);

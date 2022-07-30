@@ -67,7 +67,9 @@ insert into biblioteca (usuario_id,libro_id,estado) values
 						(1,3,'Progreso'),
 						(1,4,'Terminado'),
 						(1,5,'Dejado');
-                    
+ 
+ update biblioteca set puntuacion=9.0 where usuario_id=1;
+  
 insert into generolibro (genero_id,libro_id) values 
 					(1,1),(2,1),(3,2),(6,2),(5,3),(4,4),(5,4),(6,4),(5,5),(2,5),(1,5),
                     (12,1),(6,1),(11,2),(10,2),(7,3),(7,4),(8,4),(9,4),(11,5),(12,5),(10,5); 

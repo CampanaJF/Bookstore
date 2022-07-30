@@ -11,7 +11,6 @@ import java.util.Random;
 
 import org.junit.Test;
 
-import ar.edu.unlam.tallerweb1.excepciones.*;
 import ar.edu.unlam.tallerweb1.modelo.Biblioteca;
 import ar.edu.unlam.tallerweb1.modelo.Estado;
 import ar.edu.unlam.tallerweb1.modelo.Genero;
@@ -20,17 +19,20 @@ import ar.edu.unlam.tallerweb1.modelo.Libro;
 import ar.edu.unlam.tallerweb1.modelo.Resenia;
 import ar.edu.unlam.tallerweb1.modelo.TipoGenero;
 import ar.edu.unlam.tallerweb1.modelo.Usuario;
+import ar.edu.unlam.tallerweb1.repositorios.RepositorioBiblioteca;
 import ar.edu.unlam.tallerweb1.repositorios.RepositorioLibro;
 
 
 import static org.assertj.core.api.Assertions.*;
 
-
+@SuppressWarnings({ "rawtypes", "unchecked" })
 public class ServicioLibroTest {
 	
 	private RepositorioLibro repositorioLibro = mock(RepositorioLibro.class);
+	private RepositorioBiblioteca repositorioBiblioteca = mock(RepositorioBiblioteca.class);
 
-	private ServicioLibroImpl servicioLibro= new ServicioLibroImpl(repositorioLibro);
+	private ServicioLibroImpl servicioLibro= new ServicioLibroImpl(repositorioLibro,repositorioBiblioteca);
+	
 	
 	
 	@Test
@@ -111,6 +113,8 @@ public class ServicioLibroTest {
 		return servicioLibro.getGenerosLibro(id);
 		
 	}
+	
+	
 
 
 

@@ -105,7 +105,7 @@ public class RepositorioBibliotecaTest extends SpringTest {
 
 	private List<Biblioteca> whenSeTraenLasBibliotecasDeEseLibro(Libro l1) {
 
-		return repositorioBiblioteca.getBiblbiotecasDeLibro(l1.getId());
+		return repositorioBiblioteca.getBibliotecasDelLibro(l1.getId());
 	}
 
 	@Test
@@ -159,7 +159,7 @@ public class RepositorioBibliotecaTest extends SpringTest {
 
 	private List<Biblioteca> whenSeTraeLaBibliotecaDeEseUsuario(Usuario u1) {
     	
-    	return repositorioBiblioteca.getBiblbiotecaDeUsuario(u1.getId());
+    	return repositorioBiblioteca.getBibliotecasDelUsuario(u1.getId());
 	}
     
 

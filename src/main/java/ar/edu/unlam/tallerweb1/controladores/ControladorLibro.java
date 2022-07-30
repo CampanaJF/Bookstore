@@ -58,10 +58,7 @@ public class ControladorLibro {
         }
 		
 		Biblioteca biblioteca = this.servicioBiblioteca.getBiblioteca(libroId, userId);
-		
-//		SimpleDateFormat formatofecha = new SimpleDateFormat ("dd-MM-yyyy");
-//		
-//		String fecha = formatofecha.format(libro.getPublicado());		
+			
 		
 		model.put("generos", generos);
 		model.put("resenias", resenias);

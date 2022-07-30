@@ -19,4 +19,6 @@ public interface ServicioBiblioteca {
 
 	Biblioteca getBiblioteca(Long Lid, Long Uid);
 
+	Double calcularPuntuacionLibro(Long id);
+
 }

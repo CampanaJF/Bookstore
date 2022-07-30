@@ -1,5 +1,7 @@
 package ar.edu.unlam.tallerweb1.servicios;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,6 +45,30 @@ public class ServicioBibliotecaImpl implements ServicioBiblioteca {
 		
 		this.repositorioBiblioteca.cambiarPuntuacion(id, id2, p);
 		
+		calcularPuntuacionLibro(id);
+		
+	}
+	
+	@Override
+	public Double calcularPuntuacionLibro(Long id) {
+		List<Biblioteca> B = this.repositorioBiblioteca.getBibliotecasDelLibro(id);
+		Double puntuacionObtenida = 0.0;
+			
+		for (int i = 0; i < B.size(); i++) {
+			Double p = B.get(i).getPuntuacion();
+			if(p!=null)
+			puntuacionObtenida+=B.get(i).getPuntuacion();
+			
+		}
+
+		puntuacionObtenida = (puntuacionObtenida/B.size());
+		
+		Integer temp = (int)(puntuacionObtenida*100.0);
+		Double res = ((double)temp)/100.0;
+		
+		this.repositorioLibro.setPuntuacionLibro(id,res);
+		
+		return res;
 	}
 	
 	@Override

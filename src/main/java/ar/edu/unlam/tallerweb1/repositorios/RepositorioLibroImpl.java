@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import ar.edu.unlam.tallerweb1.modelo.Genero;
 import ar.edu.unlam.tallerweb1.modelo.GeneroLibro;
 import ar.edu.unlam.tallerweb1.modelo.Lenguaje;
 import ar.edu.unlam.tallerweb1.modelo.Libro;
@@ -59,24 +58,37 @@ public class RepositorioLibroImpl implements RepositorioLibro {
 		
 		return getSession().createCriteria(Resenia.class).add(rest1).list();
 	}
+	
+	@Override
+	public void setPuntuacionLibro(Long id,Double p) {
+
+	    Libro l = getLibro(id);
 		
-	@Override
-	public Libro buscarLibroXTitulo(String titulo) {
-		// TODO Auto-generated method stub
-		return null;
+		l.setPuntuacion(p);
+		
+		getSession().update(l);
+		
 	}
 
 	@Override
-	public Libro buscarLibroXAutor(String autor) {
-		// TODO Auto-generated method stub
-		return null;
+	public void guardar(Libro libro) {
+		getSession().save(libro);
+		
 	}
 
 	@Override
-	public Libro buscarLibroXLenguaje(Lenguaje lenguaje) {
-		// TODO Auto-generated method stub
-		return null;
+	public void update(Libro libro) {
+		
+		Libro l = getLibro(libro.getId());
+		
+		l=libro;
+		
+		getSession().update(l);
+		
+		
 	}
+		
+	
 
 
 

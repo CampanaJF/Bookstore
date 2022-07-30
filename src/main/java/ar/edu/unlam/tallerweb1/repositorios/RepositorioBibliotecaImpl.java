@@ -12,8 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import ar.edu.unlam.tallerweb1.modelo.Biblioteca;
 import ar.edu.unlam.tallerweb1.modelo.Estado;
-import ar.edu.unlam.tallerweb1.modelo.Libro;
-import ar.edu.unlam.tallerweb1.modelo.Usuario;
+
 
 @SuppressWarnings({ "unchecked", "deprecation" })
 @Repository("RepositorioBiblioteca")
@@ -74,14 +73,14 @@ public class RepositorioBibliotecaImpl implements RepositorioBiblioteca {
 	}
 
 	@Override
-	public List<Biblioteca> getBiblbiotecasDeLibro(Long id) {
+	public List<Biblioteca> getBibliotecasDelLibro(Long id) {
 		Criterion rest1 = Restrictions.eq("libro.id",id);
 		
 		return getSession().createCriteria(Biblioteca.class).add(rest1).list();
 	}
 	
 	@Override
-	public List<Biblioteca> getBiblbiotecaDeUsuario(Long id) {
+	public List<Biblioteca> getBibliotecasDelUsuario(Long id) {
 		Criterion rest1 = Restrictions.eq("usuario.id",id);
 		
 		return getSession().createCriteria(Biblioteca.class).add(rest1).list();

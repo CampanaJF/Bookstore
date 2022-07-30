@@ -15,5 +15,16 @@ public interface ServicioLibro {
 	List<Genero> getGenerosLibro(Long Lid);
 	
 	List<Resenia> getReseniasLibro(Long Lid);
+	
+	void crearLibro(Libro libro);
+	
+	Libro setPublicadoLibro(Libro libro);
+	
+	void validarLenguajeLibro(Libro libro);
+	
+	void validarTituloYSinopsis(Libro libro);
+	
+	Libro validarPortadaYArchivo(Libro libro);
+	
 
 }
