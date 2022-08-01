@@ -1,5 +1,7 @@
 package ar.edu.unlam.tallerweb1.servicios;
 
+import java.io.File;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -7,6 +9,7 @@ import java.util.List;
 
 import javax.transaction.Transactional;
 
+import org.apache.pdfbox.pdmodel.PDDocument;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -69,7 +72,7 @@ public class ServicioLibroImpl implements ServicioLibro{
 	}
 
 	@Override
-	public void crearLibro(Libro libro) {
+	public void crearLibro(Libro libro){
 		
 		libro = setPublicadoLibro(libro);
 		
@@ -77,7 +80,10 @@ public class ServicioLibroImpl implements ServicioLibro{
 		
 		validarLenguajeLibro(libro);
 		
+		validarPortadaYArchivo(libro);
+		
 		this.repositorioLibro.guardar(libro);
+			
 	}
 
 	
@@ -119,6 +125,17 @@ public class ServicioLibroImpl implements ServicioLibro{
 		if(libro.getPortada()==null)
 			libro.setPortada("book");
 		
+		return libro;
+	}
+
+	@Override
+	public Libro setPaginas(Libro libro) throws IOException {
+		
+		PDDocument doc = PDDocument.load(new File("file.pdf"));
+		int count = doc.getNumberOfPages();
+		doc.close();
+		
+		libro.setPaginas(count);
 		return libro;
 	}
 

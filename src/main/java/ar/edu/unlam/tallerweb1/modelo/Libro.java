@@ -30,7 +30,7 @@ public class Libro {
 	private String portada;
 	private String archivo;
 	
-	private Long paginas;
+	private Integer paginas;
 	private Double puntuacion;
 	
 	@Column(columnDefinition = "boolean default false")
@@ -142,11 +142,11 @@ public class Libro {
 		this.puntuacion = puntuacion;
 	}
 
-	public Long getPaginas() {
+	public Integer getPaginas() {
 		return paginas;
 	}
 
-	public void setPaginas(Long paginas) {
+	public void setPaginas(Integer paginas) {
 		this.paginas = paginas;
 	}
 

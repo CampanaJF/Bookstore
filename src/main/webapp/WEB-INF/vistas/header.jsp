@@ -17,7 +17,7 @@
 				<span class="material-symbols-outlined">auto_stories</span><span class="ps">Biblioteca</span></a>
 			</li>
 
-			<li><a class="valign-wrapper" href="librogen">
+			<li><a class="valign-wrapper" href="nuevoLibro">
 				<span class="material-symbols-outlined">history_edu</span><span class="ps">Nuevo Libro</span></a>
 			</li>
 

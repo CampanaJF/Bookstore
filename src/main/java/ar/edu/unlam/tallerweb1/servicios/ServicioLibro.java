@@ -1,5 +1,6 @@
 package ar.edu.unlam.tallerweb1.servicios;
 
+import java.io.IOException;
 import java.util.List;
 
 import ar.edu.unlam.tallerweb1.modelo.Genero;
@@ -23,6 +24,8 @@ public interface ServicioLibro {
 	void validarLenguajeLibro(Libro libro);
 	
 	void validarTituloYSinopsis(Libro libro);
+	
+	Libro setPaginas(Libro libro) throws IOException;
 	
 	Libro validarPortadaYArchivo(Libro libro);
 	
