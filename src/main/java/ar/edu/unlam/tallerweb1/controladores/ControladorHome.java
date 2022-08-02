@@ -88,11 +88,30 @@ public class ControladorHome {
 	           
 	    return new ModelAndView("nuevoLibro","filesuccess","File successfully saved!");  
 	    }  
-
-		
-		@RequestMapping(path = "/", method = RequestMethod.GET)
-		public ModelAndView home() {
-			return new ModelAndView("redirect:/home");
-		}
+	    
+//	    @RequestMapping(value="/savefile",method=RequestMethod.POST)  
+//	    public ModelAndView upload(@RequestParam CommonsMultipartFile file,HttpSession session){  
+//	            String path=session.getServletContext().getRealPath("/");  
+//	            String filename=file.getOriginalFilename();  
+//	              
+//	            System.out.println(path+" "+filename);  
+//	            try{  
+//	            byte barr[]=file.getBytes();  
+//	              
+//	            BufferedOutputStream bout=new BufferedOutputStream(  
+//	                     new FileOutputStream(path+"/"+filename));  
+//	            bout.write(barr);  
+//	            bout.flush();  
+//	            bout.close();  
+//	              
+//	            }catch(Exception e){System.out.println(e);}  
+//	            return new ModelAndView("nuevoLibro","filename",path+"/"+filename);  
+//	        } 
+//
+//		
+//		@RequestMapping(path = "/", method = RequestMethod.GET)
+//		public ModelAndView home() {
+//			return new ModelAndView("redirect:/home");
+//		}
 
 }
