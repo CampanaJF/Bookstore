@@ -131,7 +131,9 @@ public class ServicioLibroImpl implements ServicioLibro{
 	@Override
 	public Libro setPaginas(Libro libro) throws IOException {
 		
-		PDDocument doc = PDDocument.load(new File("file.pdf"));
+		String path = "D:/DW/Eclipse_workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/shelves/archivos";
+		
+		PDDocument doc = PDDocument.load(new File(path+"/"+libro.getArchivo()+".pdf"));
 		int count = doc.getNumberOfPages();
 		doc.close();
 		

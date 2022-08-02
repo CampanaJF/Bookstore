@@ -26,6 +26,7 @@ import ar.edu.unlam.tallerweb1.servicios.ServicioSession;
 public class ControladorHome {
 	
 	private static final String UPLOAD_DIRECTORY ="/archivos";  
+	private static final String dir ="C:/Users/Graciela/Desktop/Shelves/src/main/webapp/archivos";
 	private final ServicioLibro servicioLibro;
 	private final ServicioSession servicioSession;
 	
