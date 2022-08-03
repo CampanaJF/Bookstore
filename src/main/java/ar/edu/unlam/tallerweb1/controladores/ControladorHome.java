@@ -110,9 +110,9 @@ public class ControladorHome {
 //	        } 
 //
 //		
-//		@RequestMapping(path = "/", method = RequestMethod.GET)
-//		public ModelAndView home() {
-//			return new ModelAndView("redirect:/home");
-//		}
+		@RequestMapping(path = "/", method = RequestMethod.GET)
+		public ModelAndView home() {
+			return new ModelAndView("redirect:/home");
+		}
 
 }

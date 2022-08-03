@@ -38,7 +38,32 @@ public class ControladorBibliotecaTest {
 	
 	private ModelAndView mav = new ModelAndView();
 	
-	
+//	@Test
+//	public void queSeRedireccionesSiNoEstaLogueadoAlAgregarABiblioteca(){
+//		
+//		Long id = 1L;
+//		
+//		whenSeIngresaAEseLibro(id);
+//		
+//		thenLaVistaEsCorrecta();
+//
+//	}
+//	
+//	
+//	private void thenLaVistaEsCorrecta() {
+//		assertThat(mav.getViewName()).isEqualTo("login");
+//		
+//	}
+//
+//
+//	private void whenSeIngresaAEseLibro(Long id) {
+//		mocksSessionRequests();
+//		
+//		mav = this.controladorBiblioteca.agregarABiblioteca(id, mockRequest);
+//		
+//	}
+
+
 	@Test
 	public void queSePuedaQuitarUnLibroDeUnaBiblioteca(){
 		
@@ -187,8 +212,9 @@ public class ControladorBibliotecaTest {
 	
 	 private void mocksSessionRequests() {
 	    when(mockRequest.getSession()).thenReturn(mockSession);
-	    /* when(mockRequest.getSession().getAttribute("ROL")).thenReturn("ADM");
 	    when(mockRequest.getSession().getAttribute("ID")).thenReturn(1L);
+	    /* when(mockRequest.getSession().getAttribute("ROL")).thenReturn("ADM");
+	    
 	    when(mockRequest.getSession().getAttribute("USUARIO")).thenReturn(new Usuario()); */
 	 }
 	

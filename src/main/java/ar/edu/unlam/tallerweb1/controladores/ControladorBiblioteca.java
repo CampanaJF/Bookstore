@@ -49,8 +49,10 @@ public class ControladorBiblioteca {
 	public ModelAndView agregarABiblioteca(@RequestParam("libroId") Long libroId,
 										   HttpServletRequest request) {
 		
-		
 		Long userId = this.servicioSession.getUserId(request);
+		
+		if(userId==null)
+			return new ModelAndView("redirect:/login");
 		
 		this.servicioBiblioteca.agregarABiblioteca(libroId, userId);
 		

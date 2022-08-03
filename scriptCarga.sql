@@ -60,6 +60,8 @@ insert into libro (id,lenguaje,publicado,sinopsis,titulo,autor_id,portada,esPrem
 					(7,'Italiano',now(),'T Libro','T',2,'book',1,null),
 					(8,'Ingles',now(),'C Libro','C',2,'book',1,null),
 					(9,'Espanol','2022-06-01','Quinto Libro','Cinco',2,'book',0,null);
+                    
+update libro set estado="Progreso" where id=1;
 
 insert into biblioteca (usuario_id,libro_id,estado) values 
 						(1,1,'Nuevo'),

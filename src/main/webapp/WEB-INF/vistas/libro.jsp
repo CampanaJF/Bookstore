@@ -94,25 +94,22 @@
                     
                     
                     <c:if test="${libro.lenguaje == 'Espanol'}">
-                      <img src="<c:url value="img/Espanol.svg"/>">
+                      <img class="icons" src="<c:url value="img/Espanol.svg"/>">
 					  <p class="ps minitexto"> Espa&#241ol</p>
 					</c:if>
 					
 					<c:if test="${libro.lenguaje != 'Espanol'}">
-					  <img src="<c:url value="/img/${libro.lenguaje}.svg"/>">
-					  <img src="<c:url value="/img/${libro.lenguaje}.png"/>">
-					  <img src="<c:url value="/img/united-kingdom-pngrepo-com.png"/>">
-					  <img src="<c:url value="/img/${libro.lenguaje}.jpg"/>">
+					  <img class="icons" src="<c:url value="/img/${libro.lenguaje}.svg"/>">
 					  <p class="ps minitexto">${libro.lenguaje}</p>
 					</c:if>
 
 					<span class="ps minitexto">| Publicado: ${libro.publicadoS}</span>
 					
 					<c:choose>
-					<c:when test="${libro.serie.estado == 'Progreso'}">
+					<c:when test="${libro.estado == 'Progreso'}">
                     <span class="material-symbols-outlined iconverde ps1">circle</span>
                     </c:when>
-                    <c:when test="${libro.serie.estado == 'Pausa'}">
+                    <c:when test="${libro.estado == 'Pausa'}">
                     <span class="material-symbols-outlined iconazul ps1">circle</span>
                     </c:when>
                     <c:otherwise>
@@ -120,7 +117,7 @@
                     </c:otherwise>
                     </c:choose>
                     
-                    <span class="ps minitexto">| ${libro.serie.estado} </span>
+                    <span class="ps minitexto">| ${libro.estado} </span>
                     <span class="material-symbols-outlined notificationicon ps1">star</span>
                     <span class="ps minitexto">| ${libro.puntuacion}</span>
                 </div>

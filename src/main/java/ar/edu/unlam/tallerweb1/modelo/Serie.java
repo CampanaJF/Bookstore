@@ -24,15 +24,10 @@ public class Serie {
 	private String portada;
 	private String sinopsis;
 	
-	@Enumerated(EnumType.STRING)
-	private Estado estado;
-	
 	public Long getId() {
 		return id;
 	}
 	
-	
-
 	public void setId(Long id) {
 		this.id = id;
 	}
@@ -68,15 +63,6 @@ public class Serie {
 	public void setSinopsis(String sinopsis) {
 		this.sinopsis = sinopsis;
 	}
-
-	public Estado getEstado() {
-		return estado;
-	}
-
-	public void setEstado(Estado estado) {
-		this.estado = estado;
-	}
-
 	
 	
 }

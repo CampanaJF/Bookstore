@@ -25,6 +25,9 @@ public class Libro {
 	@Enumerated(EnumType.STRING)
 	private Lenguaje lenguaje;
 	
+	@Enumerated(EnumType.STRING)
+	private Estado estado;
+	
 	private String referencia;
 	private String sinopsis;
 	private String portada;
@@ -157,8 +160,14 @@ public class Libro {
 	public void setPublicadoS(String publicadoS) {
 		this.publicadoS = publicadoS;
 	}
-	
-	
+
+	public Estado getEstado() {
+		return estado;
+	}
+
+	public void setEstado(Estado estado) {
+		this.estado = estado;
+	}
 	
 	
 	
