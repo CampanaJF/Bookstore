@@ -1,10 +1,13 @@
 package ar.edu.unlam.tallerweb1.repositorios;
 
-import ar.edu.unlam.tallerweb1.modelo.Libro;
 import ar.edu.unlam.tallerweb1.modelo.Usuario;
+
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Criterion;
+import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -17,10 +20,11 @@ import org.springframework.transaction.annotation.Transactional;
 @Repository("repositorioUsuario")
 @Transactional
 public class RepositorioUsuarioImpl implements RepositorioUsuario {
-
+	
 	// Maneja acciones de persistencia, normalmente estara inyectado el session factory de hibernate
 	// el mismo esta difinido en el archivo hibernateContext.xml
 	private SessionFactory sessionFactory;
+
 
     @Autowired
 	public RepositorioUsuarioImpl(SessionFactory sessionFactory){
@@ -28,44 +32,58 @@ public class RepositorioUsuarioImpl implements RepositorioUsuario {
 	}
     
     private Session getSession() {
-	    return sessionFactory.getCurrentSession();
+		   return sessionFactory.getCurrentSession();
 	}
-
+    
 	@Override
-	public Usuario auntentificarUsuario(String email, String password) {
-
-		// Se obtiene la sesion asociada a la transaccion iniciada en el servicio que invoca a este metodo y se crea un criterio
-		// de busqueda de Usuario donde el email y password sean iguales a los del objeto recibido como parametro
-		// uniqueResult da error si se encuentran mas de un resultado en la busqueda.
-		final Session session = sessionFactory.getCurrentSession();
-		return (Usuario) session.createCriteria(Usuario.class)
-				.add(Restrictions.eq("email", email))
-				.add(Restrictions.eq("password", password))
-				.uniqueResult();
+	public Usuario auntentificarUsuario(String email, String password) {	
+		Criterion rest1 = Restrictions.eq("email", email);
+		Criterion rest2 = Restrictions.eq("password", password);
+		
+		return (Usuario) getSession() .createCriteria(Usuario.class)
+				.add(rest1).add(rest2).uniqueResult();
+		
+		
 	}
 
 	@Override
 	public void guardar(Usuario usuario) {
-		sessionFactory.getCurrentSession().save(usuario);
+		getSession() .save(usuario);
 	}
 
 	@Override
-	public Usuario buscarXMail(String email) {
-		return (Usuario) sessionFactory.getCurrentSession().createCriteria(Usuario.class)
-				.add(Restrictions.eq("email", email))
-				.uniqueResult();
+	public Usuario buscarXMail(String email) {	
+		Criterion rest1 = Restrictions.eq("email", email);
+		return (Usuario) getSession() .createCriteria(Usuario.class).add(rest1).uniqueResult();
 	}
 
 	@Override
 	public void modificar(Usuario usuario) {
-		sessionFactory.getCurrentSession().update(usuario);
+		getSession() .update(usuario);
 	}
 
 	@Override
 	public Usuario getUsuario(Long id) {
 		Criterion rest1 = Restrictions.eq("id",id);
 		
-		return (Usuario) getSession().createCriteria(Usuario.class).add(rest1).uniqueResult();
+		return (Usuario) getSession() .createCriteria(Usuario.class).add(rest1).uniqueResult();
+	}
+	
+	@Override
+	public Usuario getUsuarioNombre(String nombre) {
+		
+		Criterion rest1 = Restrictions.eq("nombre",nombre);
+
+		return (Usuario) getSession() .createCriteria(Usuario.class).add(rest1).uniqueResult();
+			
+	}
+	
+	@Override
+	public List<Usuario> getUsuariosNombre(String nombre) {
+		Criterion rest1 = Restrictions.ilike("nombre",nombre,MatchMode.ANYWHERE);
+		
+		return getSession() .createCriteria(Usuario.class).add(rest1).list();
+			
 	}
 
 }

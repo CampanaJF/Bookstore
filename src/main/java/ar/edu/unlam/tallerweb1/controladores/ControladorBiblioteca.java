@@ -99,7 +99,7 @@ public class ControladorBiblioteca {
 		return new ModelAndView("redirect:/");
 	}
 	
-	@RequestMapping(path = "/biblioteca/remover", method = RequestMethod.POST)
+	@RequestMapping(path = "/biblioteca/remover", method = RequestMethod.GET)
 	public ModelAndView quitarDeBiblioteca(@RequestParam("libroId")Long libroId, HttpServletRequest request) {
 
 		Long userId = this.servicioSession.getUserId(request);

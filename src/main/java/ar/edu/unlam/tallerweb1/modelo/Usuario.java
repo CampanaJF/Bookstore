@@ -112,6 +112,7 @@ public class Usuario {
 	public void setImg(String img) {
 		this.img = img;
 	}
+	
 	@Override
 	public boolean equals(Object o) {
 		if (this == o) return true;

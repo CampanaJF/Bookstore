@@ -89,6 +89,8 @@ public class ServicioBibliotecaImpl implements ServicioBiblioteca {
 		
 		this.repositorioBiblioteca.borrar(id,id2);
 		
+		calcularPuntuacionLibro(id);
+		
 	}
 
 	@Override

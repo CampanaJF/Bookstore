@@ -1,5 +1,5 @@
 .ps{
-    padding-left: 0.5em;
+    padding-left: 0.5em !important;
   }
 
 .ps1{
@@ -13,7 +13,7 @@
     padding-bottom: 1.5em;
   }
 .pe{
-    padding-right: 0.5em;
+    padding-right: 0.5em !important;
   }
   
 .pt{

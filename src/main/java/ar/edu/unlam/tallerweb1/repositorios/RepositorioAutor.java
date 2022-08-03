@@ -9,4 +9,12 @@ public interface RepositorioAutor {
 	
 	List<Autor> getAutores();
 
+	Autor getAutorNombre(String nombre);
+
+	List<Autor> getAutoresNombre(String nombre);
+
+	List<Autor> getAutoresApellido(String apellido);
+	
+	
+
 }

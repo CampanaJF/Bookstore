@@ -22,4 +22,6 @@ public interface RepositorioLibro {
 	
 	void update(Libro libro);
 
+	List<Libro> getLibrosTitulo(String string);
+
 }

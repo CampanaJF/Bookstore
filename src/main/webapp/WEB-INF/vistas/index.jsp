@@ -86,17 +86,17 @@
 				<a href="libro?libroId=${libros.id}">
 				<div class="card-image">
 				  <img src="<c:url value="/img/${libros.portada}.jpeg"/>"> <%-- 300x300 --%>
-				  <span class="card-title">${libros.titulo}</span>
+				  <span class="black-text card-title">${libros.titulo}</span>
 				</div>
 				<div class="card-content">
 				
 				<c:if test="${libros.lenguaje != 'Espanol'}">
-				  <img src="<c:url value="img/${libros.lenguaje}.svg" />">
+				  <img class="icons" src="<c:url value="img/${libros.lenguaje}.svg" />">
 				  <p class="black-text">${libros.lenguaje}</p>	
 				</c:if>
 				
 				<c:if test="${libros.lenguaje == 'Espanol'}">
-				  <img src="<c:url value="img/Espanol.svg" />">
+				  <img class="icons" src="<c:url value="img/Espanol.svg" />">
 				  <p class="black-text">Espa&#241ol</p>	
 				</c:if>
 				

@@ -87,6 +87,15 @@
               
                 
                  </c:if>
+                 
+                 
+                 <%-- Eliminar --%>
+                 <c:if test="${not empty biblioteca}">
+	            <a href="<c:url value="/biblioteca/remover?libroId=${libro.id}"/>"
+	             class="pe ps dropdown-trigger texto btn-large waves-effect waves-light orange darken-3">
+                <i class="material-icons">delete</i>
+                </a>
+                 </c:if>
             
 
 

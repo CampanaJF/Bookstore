@@ -1,6 +1,8 @@
 package ar.edu.unlam.tallerweb1.modelo;
 
 
+import java.util.Objects;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -48,6 +50,22 @@ public class Autor {
 		}
 		public void setActivo(Boolean activo) {
 			this.activo = activo;
+		}
+		
+		@Override
+		public boolean equals(Object o) {
+			if (this == o) return true;
+			if (o == null || getClass() != o.getClass()) return false;
+			Autor autor = (Autor) o;
+			return Objects.equals(id, autor.id)
+					&& Objects.equals(nombre, autor.nombre) && Objects.equals(apellido, autor.apellido)
+					&& Objects.equals(activo, autor.activo) && Objects.equals(usuario, autor.usuario);
+
+		}
+
+		@Override
+		public int hashCode() {
+			return Objects.hash(id,nombre,apellido, activo,usuario);
 		}
 		
 		

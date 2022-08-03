@@ -12,4 +12,6 @@ public interface RepositorioUsuario {
     Usuario buscarXMail(String email);
 	void modificar(Usuario usuario);
 	Usuario getUsuario(Long id);
+	Usuario getUsuarioNombre(String nombre);
+	List<Usuario> getUsuariosNombre(String nombre);
 }
