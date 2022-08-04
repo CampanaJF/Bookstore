@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import ar.edu.unlam.tallerweb1.modelo.Genero;
 import ar.edu.unlam.tallerweb1.modelo.GeneroLibro;
 import ar.edu.unlam.tallerweb1.modelo.Libro;
 import ar.edu.unlam.tallerweb1.modelo.Resenia;
@@ -94,9 +95,8 @@ public class RepositorioLibroImpl implements RepositorioLibro {
 		
 		return getSession().createCriteria(Libro.class).add(rest1).list();
 	}
-		
-	
 
+	
 
 
 }

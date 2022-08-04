@@ -2,6 +2,7 @@ package ar.edu.unlam.tallerweb1.repositorios;
 
 import java.util.List;
 
+import ar.edu.unlam.tallerweb1.modelo.Genero;
 import ar.edu.unlam.tallerweb1.modelo.GeneroLibro;
 import ar.edu.unlam.tallerweb1.modelo.Libro;
 import ar.edu.unlam.tallerweb1.modelo.Resenia;
@@ -23,5 +24,6 @@ public interface RepositorioLibro {
 	void update(Libro libro);
 
 	List<Libro> getLibrosTitulo(String string);
+
 
 }
