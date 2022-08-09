@@ -50,14 +50,14 @@ public class ServicioBusquedaImpl implements ServicioBusqueda{
 
 	@Override
 	public Set<Autor> getAutoresBuscados(String campo) {
-		List<Autor> genero = this.repositorioAutor.getAutoresNombre(campo);
-		List<Autor> artista = this.repositorioAutor.getAutoresApellido(campo);
+		List<Autor> a = this.repositorioAutor.getAutoresNombre(campo);
+		List<Autor> b = this.repositorioAutor.getAutoresApellido(campo);
 
 
 		Set<Autor> todos = new HashSet<>();
 
-		todos.addAll(genero);
-		todos.addAll(artista);
+		todos.addAll(a);
+		todos.addAll(b);
 		
 		return todos;
 	}

@@ -66,24 +66,26 @@ public class ControladorBusqueda {
 //		return new ModelAndView("busqueda",model);
 //	}
 	
-	@RequestMapping(path = "/busqueda", method = RequestMethod.POST)
-	public ModelAndView buscara(@RequestParam String busqueda,HttpServletRequest request) {
+	@RequestMapping(path = "/busqueda", method = RequestMethod.GET)
+	public ModelAndView busqueda(HttpServletRequest request,
+								@RequestParam(value = "buscado", required = true) String buscado) {
+		
 		ModelMap model = new ModelMap();
 		Long userId = this.servicioSession.getUserId(request);
 		model.put("usuario", userId);
 		
-		List<Libro> l = servicioBusqueda.getLibrosBuscados(busqueda);
-		Set<Autor> u = servicioBusqueda.getAutoresBuscados(busqueda);
-		List<Usuario> a = servicioBusqueda.getUsuariosBuscados(busqueda);
+//		List<Libro> l = servicioBusqueda.getLibrosBuscados(buscado);
+//		Set<Autor> u = servicioBusqueda.getAutoresBuscados(buscado);
+//		List<Usuario> a = servicioBusqueda.getUsuariosBuscados(buscado);
 		
 		
-		model.put("libros",servicioBusqueda.getLibrosBuscados(busqueda));
+		model.put("libros",servicioBusqueda.getLibrosBuscados(buscado));
 			
 		  
-		model.put("autores",servicioBusqueda.getAutoresBuscados(busqueda));
+		model.put("autores",servicioBusqueda.getAutoresBuscados(buscado));
 
 
-		model.put("usuarios",servicioBusqueda.getUsuariosBuscados(busqueda));
+		model.put("usuarios",servicioBusqueda.getUsuariosBuscados(buscado));
 
 		return new ModelAndView("busqueda",model);
 		

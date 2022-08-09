@@ -26,12 +26,11 @@
 
 				<div class="row center">
 			
-					<form class="">	
+					<form action="busqueda">	
 						<div class="input-field">
 							<span class="material-symbols-outlined prefix">
-								search
 							</span>
-							<input type="text" class="white-text materialize-textarea">
+							<input type="text" class="white-text materialize-textarea" name="buscado">
 							<button type="submit" id="download-button"
 							   class="texto btn-large waves-effect orange darken-3" href="historias">Buscar</button>
 						</div>
