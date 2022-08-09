@@ -41,9 +41,7 @@ public class RepositorioUsuarioImpl implements RepositorioUsuario {
 		Criterion rest2 = Restrictions.eq("password", password);
 		
 		return (Usuario) getSession() .createCriteria(Usuario.class)
-				.add(rest1).add(rest2).uniqueResult();
-		
-		
+				.add(rest1).add(rest2).uniqueResult();	
 	}
 
 	@Override
@@ -85,5 +83,19 @@ public class RepositorioUsuarioImpl implements RepositorioUsuario {
 		return getSession() .createCriteria(Usuario.class).add(rest1).list();
 			
 	}
+
+	@Override
+	public Boolean validarRegistro(Usuario usuario) {
+		Criterion rest1 = Restrictions.eq("email", usuario.getEmail());
+
+		Usuario encontrado = (Usuario) getSession().createCriteria(Usuario.class).add(rest1).uniqueResult();
+		
+		if(encontrado == null)
+			return true;
+		
+		return false;
+		
+	}
+
 
 }

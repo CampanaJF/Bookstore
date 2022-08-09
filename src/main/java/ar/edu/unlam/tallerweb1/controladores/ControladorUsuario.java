@@ -2,6 +2,7 @@ package ar.edu.unlam.tallerweb1.controladores;
 
 import ar.edu.unlam.tallerweb1.modelo.Usuario;
 import ar.edu.unlam.tallerweb1.servicios.ServicioSession;
+import ar.edu.unlam.tallerweb1.excepciones.*;
 import ar.edu.unlam.tallerweb1.servicios.ServicioUsuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -28,11 +29,21 @@ public class ControladorUsuario {
 	@RequestMapping("/login")
 	public ModelAndView irALogin() {
 
-		ModelMap modelo = new ModelMap();
+		ModelMap model = new ModelMap();
 
-		modelo.put("datosUsuario", new Usuario());
+		model.put("datosUsuario", new Usuario());
 
-		return new ModelAndView("login", modelo);
+		return new ModelAndView("login", model);
+	}
+	
+	@RequestMapping("/registrarse")
+	public ModelAndView registro(HttpServletRequest request) {
+		//validar si esta logueado
+		ModelMap model = new ModelMap();
+		
+		model.put("datosUsuario", new Usuario());
+		
+		return new ModelAndView("registro", model);
 	}
 
 
@@ -40,7 +51,7 @@ public class ControladorUsuario {
 	public ModelAndView validarLogin(@ModelAttribute("datosUsuario") Usuario datosUsuario, HttpServletRequest request) {
 		ModelMap model = new ModelMap();
 
-		Usuario usuarioBuscado = servicioUsuario.consultarUsuario(datosUsuario.getEmail(), datosUsuario.getPassword());
+		Usuario usuarioBuscado = servicioUsuario.validarLogin(datosUsuario.getEmail(), datosUsuario.getPassword());
 		if (usuarioBuscado != null) {
 			servicioSession.setUserId(usuarioBuscado.getId(), request);
 			return new ModelAndView("redirect:/home");
@@ -55,6 +66,34 @@ public class ControladorUsuario {
         request.getSession().invalidate();
         return new ModelAndView("redirect:/home");
     }
+	
+	
+	
+	@RequestMapping(path="/procesarRegistro",method=RequestMethod.POST)
+	public ModelAndView procesarRegistro(
+			@ModelAttribute("datosUsuario") Usuario datosUsuario) {
+		
+		ModelMap model = new ModelMap();
+		String mensaje="exito";
+			
+		try {
+            servicioUsuario.registrarUsuario(datosUsuario);
+        } catch (EmailEnUsoException eeue) {
+        	mensaje="El Email ya esta en uso";
+        	
+        } catch (PasswordsDiferentesException pde) {
+        	mensaje="Las contraseñas son diferentes";
+        	
+        } catch (PasswordLenghtException ple) {
+        	mensaje="La contraseña debe tener almenos 12 caracteres";
+        	
+        }
+
+		model.put("mensaje",mensaje);
+		
+		return new ModelAndView("registro",model);
+			
+	}
 
 	
 }

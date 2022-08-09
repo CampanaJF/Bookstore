@@ -39,6 +39,8 @@ public class Usuario {
 	
 	private String password;
 	
+	private String passwordRe;
+	
 	private Boolean activo = false;
 	
 	private Date fechaRegistro;
@@ -129,5 +131,11 @@ public class Usuario {
 	@Override
 	public int hashCode() {
 		return Objects.hash(id,esPremium, premium, email, password, diasAVencimientoPremium, fechaRegistro, activo, img);
+	}
+	public String getPasswordRe() {
+		return passwordRe;
+	}
+	public void setPasswordRe(String passwordRe) {
+		this.passwordRe = passwordRe;
 	}
 }
