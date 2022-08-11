@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -50,7 +51,7 @@ public class ControladorHome {
 		}
 		
 		@RequestMapping(path = "/home", method = RequestMethod.GET)
-		public ModelAndView goHome(HttpServletRequest request) {
+		public ModelAndView goHome(HttpServletRequest request,@ModelAttribute("mensaje") String mensaje) {
 			
 			ModelMap model = new ModelMap();
 			Long userId = this.servicioSession.getUserId(request);
@@ -58,6 +59,7 @@ public class ControladorHome {
 
 			List<Libro> libros = servicioLibro.getLibros();
 
+			model.put("mensaje", mensaje);
 			model.put("usuario", userId);
 			model.put("libros", libros);
 			

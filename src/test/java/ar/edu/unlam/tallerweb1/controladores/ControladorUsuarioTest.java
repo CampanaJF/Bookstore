@@ -85,7 +85,7 @@ public class ControladorUsuarioTest {
 
 		 private void thenSeRegistra() {
 			 assertThat(mav.getViewName()).isEqualTo("registro");
-			 assertThat(mav.getModel().get("mensaje")).isEqualTo("exito");
+			 assertThat(mav.getModel().get("mensaje")).isEqualTo("Se Registro Exitosamente");
 			 
 			
 		}
@@ -94,7 +94,7 @@ public class ControladorUsuarioTest {
 		private void whenSeRegistra(Usuario usuario) {
 			 mocksSessionRequests();
 	
-		     mav = this.controladorUsuario.procesarRegistro(usuario);	
+		     mav = this.controladorUsuario.procesarRegistro(usuario,null);	
 		}
 
 

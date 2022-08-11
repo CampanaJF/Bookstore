@@ -7,35 +7,90 @@
 <%@include file="head.jsp"%>
 
 
-	<title>${libro.titulo}</title>
+	<title>Registrarse</title>
 
 
 	<body class="orange lighten-4">
-	
-	
-<%@include file="header.jsp" %>
 
-<div class = "container">
-    <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-    
-        <form:form action="procesarRegistro" method="POST" modelAttribute="datosUsuario">
-            <h3 class="form-signin-heading">Nuevo Usuario</h3>
-            <hr class="colorgraph"><br>
+<div class="container">
 
-            <form:input path="email" id="email" class="form-control" />
-            <form:input path="password" type="password" id="password" name='password' class="form-control"/>
-            <form:input path="passwordRe" type="password" id="passwordRe" name='passwordRe' class="form-control"/>
+		<a id="logo-container" href="home" class="brand-logo">
+		<h1 class="tituloprincipal center orange-text text-darken-3">Shelves</h1></a>
+        
+        <div class="row center">
+            <h5 class="subtitulo col s12">La estanteria del mundo</h5> 	
+        </div>
 
-            <button id="btn-registrarme" class="btn btn-lg btn-primary btn-block" Type="Submit"/>Registrarme</button>
-        </form:form>
+    <div class="row">
+    <div class="col s6">
 
-        <c:if test="${not empty mensaje}">
-            <h4><span>${mensaje}</span></h4>
-            <br>
-        </c:if>
+    <form:form action="procesarRegistro" method="POST" modelAttribute="datosUsuario">
+
+    <div class="row center">
+        <h5 class="subtitulo col s12">Ingresa tus datos y registrate</h5> 	
+   </div>
+
+  <div class="row">
+    <div class="input-field col s6">
+      <input id="name" path="name" name="nombre" id="name"
+        type="text" class="validate">
+      <label for="name">Nombre</label>
+      <span class="helper-text" data-error=""
+      data-success="">Almenos 4 Caracteres</span>
     </div>
+  
+    <div class="input-field col s6">
+      <input path="email" name="email" id="email"
+       required pattern="/^[0-9a-zA-Z._.-]+\@[0-9a-zA-Z._.-]+\.[0-9a-zA-Z]+$/"
+        type="email" class="validate">
+      <label for="email">Email</label>
+      <span class="helper-text" 
+       data-error="Formato de Email no valido"
+       data-success="Direccion valida">Debe ser una direccion de correo valida</span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s6">
+      <input path="password" type="password"  name="password" id="password"
+       required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{12,}" type="password" class="validate">
+      <label for="password">Contrase&#241a</label>
+      <span class="helper-text"
+       data-error="Contrase&#241a insegura"
+       data-success="Contrase&#241a segura">Debe tener mas de 12 caracteres, una mayuscula y un numero</span>
+    </div>
+  
+    <div class="input-field col s6">
+      <input path="passwordRe" type="password"  name="passwordRe" id="passwordRe"
+       required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{12,}" type="password" class="validate">
+      <label for="passwordRe">Repetir Contrase&#241a</label>
+      <span class="helper-text" data-error="Contrase&#241a diferente" 
+      data-success=""></span>
+    </div>
+  </div>
+
+    <c:if test="${not empty mensaje}">
+    <div class="row center">
+        <p class="iconrojo subtitulo col s12">${mensaje}</p> 	
+    </div>
+    </c:if>
+
+  <div class="row center">
+    <button type="submit" id="download-button"
+    class="texto btn-large waves-effect orange darken-3">Registrarme</button>
+  </div>
+
+    </form:form>
+    </div>
+
+    <div class="col s6">
+        <img class="z-depth-5 EnterImg" src="img/homeimg.jpg">
+    </div>
+
 </div>
 
+</div>  
+	
 	<%@include file="footer.jsp" %>
 
 </body>

@@ -1,5 +1,5 @@
 .ps{
-    padding-left: 0.5em !important;
+    padding-left: 0.5em;
   }
 
 .ps1{
@@ -13,7 +13,7 @@
     padding-bottom: 1.5em;
   }
 .pe{
-    padding-right: 0.5em !important;
+    padding-right: 0.5em;
   }
   
 .pt{
@@ -56,4 +56,9 @@
   
   .iconverde{
   color:green;
+  }
+
+.EnterImg{
+   height:25em;
+   width:25em; 
   }

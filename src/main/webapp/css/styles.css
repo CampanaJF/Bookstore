@@ -23,24 +23,25 @@ body{
   color: #ef6c00 !important;
 }
 
+
 /* label focus color */
-.input-field input[type=text]:focus + label {
+.input-field input:focus + label {
   color: #ef6c00;
 }
 /* label underline focus color */
-.input-field input[type=text]:focus {
+.input-field input:focus {
   border-bottom: 1px solid #ef6c00 !important;
   box-shadow: 0 1px 0 0 #ef6c00 !important;
 }
 /* valid color */
-.input-field input[type=text].valid {
-  border-bottom: 1px solid #ef6c00;
-  box-shadow: 0 1px 0 0 #ef6c00;
+.input-field input.valid {
+  border-bottom: 1px solid #7fef00;
+  box-shadow: 0 1px 0 0 #7fef00;
 }
 /* invalid color */
-.input-field input[type=text].invalid {
-  border-bottom: 1px solid #ef6c00;
-  box-shadow: 0 1px 0 0 #ef6c00;
+.input-field input.invalid {
+  border-bottom: 1px solid #ef0800;
+  box-shadow: 0 1px 0 0 #ef0800;
 }
 
 /* icon prefix focus color */
@@ -60,13 +61,13 @@ body{
 }
 /* valid color */
 .input-field textarea.valid {
-  border-bottom: 1px solid #ef6c00;
-  box-shadow: 0 1px 0 0 #ef6c00;
+  border-bottom: 1px solid #7fef00;
+  box-shadow: 0 1px 0 0 #7fef00;
 }
 /* invalid color */
 .input-field textarea.invalid {
-  border-bottom: 1px solid #ef6c00;
-  box-shadow: 0 1px 0 0 #ef6c00;
+  border-bottom: 1px solid #ef0800;
+  box-shadow: 0 1px 0 0 #ef0800;
 }
 
 .tags > li{

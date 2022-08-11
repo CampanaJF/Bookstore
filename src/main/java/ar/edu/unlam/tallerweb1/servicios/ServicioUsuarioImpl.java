@@ -53,7 +53,7 @@ public class ServicioUsuarioImpl implements ServicioUsuario {
 	}
 	
 	@Override
-	public Boolean validarPassLenght(Usuario datosUsuario) {
+	public Boolean validarPass(Usuario datosUsuario) {
 		if(datosUsuario.getPassword()!=datosUsuario.getPasswordRe())
 			return true;
 		
@@ -61,9 +61,9 @@ public class ServicioUsuarioImpl implements ServicioUsuario {
 	}
 
 	@Override
-	public Boolean validarPass(Usuario datosUsuario) {
+	public Boolean validarPassLenght(Usuario datosUsuario) {
 
-		return datosUsuario.getPassword().length()<12;	
+		return datosUsuario.getPassword().length()>12;	
 	}
 
 	@Override

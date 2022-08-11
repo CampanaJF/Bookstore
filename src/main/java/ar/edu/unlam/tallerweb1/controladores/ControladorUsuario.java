@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -27,9 +28,15 @@ public class ControladorUsuario {
 	}
 
 	@RequestMapping("/login")
-	public ModelAndView irALogin() {
+	public ModelAndView irALogin(HttpServletRequest request,final RedirectAttributes redirectAttributes) {
 
 		ModelMap model = new ModelMap();
+		Long sess = servicioSession.getUserId(request);
+		
+		if(null!=sess) {
+			redirectAttributes.addFlashAttribute("mensaje","Ya esta Logueado!"); //permite redirect con model
+			return new ModelAndView("redirect:/home");
+		}
 
 		model.put("datosUsuario", new Usuario());
 
@@ -37,9 +44,15 @@ public class ControladorUsuario {
 	}
 	
 	@RequestMapping("/registrarse")
-	public ModelAndView registro(HttpServletRequest request) {
-		//validar si esta logueado
+	public ModelAndView registro(HttpServletRequest request, final RedirectAttributes redirectAttributes) {
+
+		Long sess = servicioSession.getUserId(request);
 		ModelMap model = new ModelMap();
+		
+		if(null!=sess) {
+			redirectAttributes.addFlashAttribute("mensaje","Ya esta Logueado!");
+			return new ModelAndView("redirect:/home");
+		}
 		
 		model.put("datosUsuario", new Usuario());
 		
@@ -61,6 +74,7 @@ public class ControladorUsuario {
 		return new ModelAndView("login", model);
 	}
 	
+	
 	@RequestMapping(path = "/logout", method = RequestMethod.GET)
     public ModelAndView guardarUsuario(HttpServletRequest request) {
         request.getSession().invalidate();
@@ -71,10 +85,9 @@ public class ControladorUsuario {
 	
 	@RequestMapping(path="/procesarRegistro",method=RequestMethod.POST)
 	public ModelAndView procesarRegistro(
-			@ModelAttribute("datosUsuario") Usuario datosUsuario) {
+			@ModelAttribute("datosUsuario") Usuario datosUsuario, final RedirectAttributes redirectAttributes) {
 		
-		ModelMap model = new ModelMap();
-		String mensaje="exito";
+		String mensaje="Se Registro Exitosamente";
 			
 		try {
             servicioUsuario.registrarUsuario(datosUsuario);
@@ -86,12 +99,15 @@ public class ControladorUsuario {
         	
         } catch (PasswordLenghtException ple) {
         	mensaje="La contraseña debe tener almenos 12 caracteres";
-        	
         }
-
-		model.put("mensaje",mensaje);
 		
-		return new ModelAndView("registro",model);
+		if(mensaje!="Se Registro Exitosamente") {
+			redirectAttributes.addFlashAttribute("mensaje",mensaje);
+			return new ModelAndView("redirect:/registrarse");
+		}
+
+		redirectAttributes.addFlashAttribute("mensaje",mensaje);
+		return new ModelAndView("redirect:/home");
 			
 	}
 

@@ -3,6 +3,8 @@ esPremium - fecha de inscripcion - fecha de vencimiento
 create schema shelves; */
 use shelves;
 
+select * from usuario;
+
 delete from genero where id is not null;
 delete from generolibro where id is not null;
 

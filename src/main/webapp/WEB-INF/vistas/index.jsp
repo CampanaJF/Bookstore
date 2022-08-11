@@ -12,8 +12,13 @@
 	<body class="orange lighten-4">
 	
 	<%@include file="header.jsp" %>
-
-		
+	
+	<c:if test="${not empty mensaje}">
+    <div class="row center">
+        <p class="iconrojo subtitulo col s12">${mensaje}</p> 	
+    </div>
+    </c:if>
+	
 		<!--Banner parallax -->
 		<div id="index-banner" class="parallax-container">
 			<div class="section no-pad-bot">

@@ -31,7 +31,7 @@
 				<span class="material-symbols-outlined">login</span><span class="ps">Login</span></a>
 			</li>
 
-			<li><a class="valign-wrapper" href="#">
+			<li><a class="valign-wrapper" href="registrarse">
 				<span class="material-symbols-outlined">app_registration</span><span class="ps">Registrarse</span></a>
 			</li>
 

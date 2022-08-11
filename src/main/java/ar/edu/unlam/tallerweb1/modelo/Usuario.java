@@ -5,6 +5,8 @@ import java.util.Objects;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -28,6 +30,9 @@ public class Usuario {
 	
 	@Lob
 	private String img;
+	
+	@Enumerated(EnumType.STRING)
+	private Lenguaje lenguaje;
 	
 	@OneToOne
 	private Premium premium;
@@ -113,6 +118,12 @@ public class Usuario {
 	}
 	public void setImg(String img) {
 		this.img = img;
+	}
+	public Lenguaje getLenguaje() {
+		return lenguaje;
+	}
+	public void setLenguaje(Lenguaje lenguaje) {
+		this.lenguaje = lenguaje;
 	}
 	
 	@Override

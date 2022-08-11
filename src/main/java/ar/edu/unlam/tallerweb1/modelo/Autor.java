@@ -21,6 +21,8 @@ public class Autor {
 		private String nombre;
 		private String apellido;
 		
+		private String img;
+		
 		@Column(columnDefinition = "boolean default false")
 		private Boolean activo;
 		
@@ -66,6 +68,12 @@ public class Autor {
 		@Override
 		public int hashCode() {
 			return Objects.hash(id,nombre,apellido, activo,usuario);
+		}
+		public String getImagen() {
+			return img;
+		}
+		public void setImagen(String imagen) {
+			this.img = imagen;
 		}
 		
 		
